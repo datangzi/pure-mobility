@@ -1,0 +1,11 @@
+Next Step (13.08.2025)
+
+1. Literature-review for following Points:
+
+- The algorithm in the original paper didn't cover the case, if Vehicle stops where they Drops off the passenger. This is an interesting Point for the further Literatur review. In the current modeling, the ending Points of v1, v2 will be set to node 10. 
+-> 13.08: found an interesting paper: DOI:10.1016/j.trc.2020.102675 "Integrated vehicle assignment and routing for system-optimal shared mobility planning with endogenous road congestion"
+
+
+- the travel time and waiting time could not be optimized. This is another interesting Point for the further Literatur review. 
+
+
