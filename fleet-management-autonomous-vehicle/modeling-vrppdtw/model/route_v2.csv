@@ -1,0 +1,6 @@
+vehicle,arc_type,i,j,t,s,w,w'
+v2,move,2,3,0,1,_,_
+v2,service,3,3,1,1,_,p2
+v2,move,3,4,1,2,p2,p2
+v2,move,4,5,2,3,p2,p2
+v2,service,5,5,3,3,p2,_
