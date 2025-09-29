@@ -1,0 +1,12 @@
+Zeit: 19.09.2025 13:00 - 14:00
+
+Agenda: 
+
+- Erstellung Bedarfsmodells zur Validierung Pure Mobility
+
+- Tooling zur Modellierung und Simulation für Flottenbetrieb (Vehicle Assignment & Routing) in Pure Mobility
+
+
+Protokoll:
+
+
