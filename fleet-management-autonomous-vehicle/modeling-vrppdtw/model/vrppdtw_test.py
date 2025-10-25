@@ -33,8 +33,8 @@ import os
 
 # Define the path to your data files
 current_dir = os.path.dirname(os.path.abspath(__file__))
-nodes_path = os.path.join(current_dir, 'nodes.csv')
-streets_path = os.path.join(current_dir, 'streets.csv')
+nodes_path = os.path.join(current_dir, 'nodes_test.csv')
+streets_path = os.path.join(current_dir, 'streets_test.csv')
 
 def load_network_data():
     if not os.path.exists(nodes_path):
@@ -51,6 +51,8 @@ def load_network_data():
         # Normalize node ids to strings
         nodes_df['id'] = nodes_df['id'].apply(norm_node)
         spaces = nodes_df['id'].tolist()
+        xs = nodes_df['x'].tolist()
+        ys = nodes_df['y'].tolist()
 
         # Read street data
         streets_df = pd.read_csv(streets_path)
@@ -408,18 +410,6 @@ def _nn(x):
     s = str(x).strip()
     return s[:-2] if s.endswith(".0") else s
 
-def layout_4x3(spaces, dx=2.2, dy=2.2):
-
-    col = {'1':0,'2':1,'3':2,'4':3,'10':0,'5':3,'9':0,'8':1,'7':2,'6':3}
-    row = {'1':2,'2':2,'3':2,'4':2,'10':1,'5':1,'9':0,'8':0,'7':0,'6':0}
-    pos = {}
-    for n in map(_nn, spaces):
-        c = col.get(n, 0); r = row.get(n, 1)
-        x = (c - 1.5) * dx
-        y = (r - 1.0) * dy
-        pos[n] = (x, y)
-    return pos
-
 def classify_arc(row, setTransport, setWaiting, setService):
     tup = (row['i'], row['j'], row['t'], row['s'], row['w'], row["w'"])
     if tup in setTransport: return 'move'
@@ -457,10 +447,19 @@ def pickup_node_from_df(df, pax):
     if svc.empty: return None
     return _nn(svc.iloc[0]['i'])
 
+def create_layout_from_coords(nodes_df):
+    """Create position dictionary from actual x,y coordinates in nodes dataframe"""
+    pos = {}
+    for _, row in nodes_df.iterrows():
+        node_id = _nn(row['id'])
+        pos[node_id] = (row['x'], row['y'])
+    return pos
+
 def animate_routes(df_v1, df_v2, spaces, streets,
                    setTransport, setWaiting, setService,
+                   nodes_df,  # Add nodes_df as parameter
                    OMEGA='Omega', FRAMES_PER_UNIT=12,
-                   SLOW_FACTOR=3,   # 3× slower than default
+                   SLOW_FACTOR=2,
                    RADIUS=0.25, NODE_RADIUS=0.18):
 
     # Colors / styles
@@ -469,11 +468,23 @@ def animate_routes(df_v1, df_v2, spaces, streets,
     COLOR_VEH_EMPTY_FILL = '#ffffff'
     COLOR_VEH_BORDER = '#000000'
 
-    # layout + figure
-    pos = layout_4x3(spaces, dx=2.2, dy=2.2)
+    # Create layout from actual coordinates
+    pos = create_layout_from_coords(nodes_df)
+    
+    # Calculate plot bounds with some padding
+    x_coords = [x for x,y in pos.values()]
+    y_coords = [y for x,y in pos.values()]
+    x_min, x_max = min(x_coords), max(x_coords)
+    y_min, y_max = min(y_coords), max(y_coords)
+    padding = 1.0  # Add padding around the layout
+    
+    # Create figure and set bounds
     fig, ax = plt.subplots(figsize=(7.8,7.6))
     plt.subplots_adjust(bottom=0.22)
-    ax.set_aspect('equal'); ax.axis('off')
+    ax.set_xlim(x_min - padding, x_max + padding)
+    ax.set_ylim(y_min - padding, y_max + padding)
+    ax.set_aspect('equal')
+    ax.axis('off')
 
     # draw edges
     for (u,v) in streets:
@@ -668,4 +679,5 @@ def animate_routes(df_v1, df_v2, spaces, streets,
 if model.status == pulp.LpStatusOptimal:
     animate_routes(df_solution_v1, df_solution_v2, spaces, streets,
                    setTransport, setWaiting, setService,
+                   nodes_df=nodes_df,  # Add this line
                    OMEGA=OMEGA, FRAMES_PER_UNIT=12, SLOW_FACTOR=3)
