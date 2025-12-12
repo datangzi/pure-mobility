@@ -1,0 +1,93 @@
+import os
+import pulp
+import pandas as pd
+import tkinter as tk
+from tkinter import messagebox
+from tkinter import simpledialog
+import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.animation import FuncAnimation
+from matplotlib.patches import Circle, Rectangle
+from matplotlib.collections import LineCollection
+import threading
+import time
+import math
+
+# ---------- Helpers ----------
+def norm_node(x):
+    """Return node id as a clean string without trailing .0 etc."""
+    s = str(x).strip()
+    if s.endswith(".0"):
+        s = s[:-2]
+    return s
+
+# =================== ROAD NETWORK DEFINITION ===================
+# Define the path to your data files (prefer OSM exports if present)
+current_dir = os.path.dirname(os.path.abspath(__file__))
+nodes_path = os.path.join(current_dir, 'nodes_osm.csv')
+streets_path = os.path.join(current_dir, 'streets_osm.csv')
+
+# Selection mode: set True to pick points by clicking on a plotted network
+USE_MAP_SELECTION = True
+
+# Globals for optional plotting
+streets_df_global = None
+
+def load_network_data():
+    global streets_df_global
+    if not os.path.exists(nodes_path):
+        raise FileNotFoundError(f"nodes file not found at {nodes_path}")
+    if not os.path.exists(streets_path):
+        raise FileNotFoundError(f"streets file not found at {streets_path}")
+    
+    try:
+        # Read node data
+        nodes_df = pd.read_csv(nodes_path)
+        if 'id' not in nodes_df.columns:
+            raise ValueError("nodes file must contain an 'id' column")
+
+        # Normalize node ids to strings
+        nodes_df['id'] = nodes_df['id'].apply(norm_node)
+        spaces = nodes_df['id'].tolist()
+
+        # Read street data
+        streets_df = pd.read_csv(streets_path)
+        required_cols = {'from_node', 'to_node', 'travel_time'}
+        if not required_cols.issubset(streets_df.columns):
+            miss = required_cols - set(streets_df.columns)
+            raise ValueError(f"streets file missing columns: {miss}")
+
+        # Normalize street endpoints to strings to match 'spaces'
+        streets_df['from_node'] = streets_df['from_node'].apply(norm_node)
+        streets_df['to_node']   = streets_df['to_node'].apply(norm_node)
+
+        # Times/costs as numbers
+        streets_df['travel_time'] = streets_df['travel_time'].astype(float).astype(int)
+
+        streets = set()
+        travel_times = {}
+
+        print("Script started")  # First line after imports
+
+        for _, row in streets_df.iterrows():
+            i, j = row['from_node'], row['to_node']  # strings
+            streets.add((i, j))
+            travel_times[(i, j)] = int(row['travel_time'])
+
+        # Keep a copy for plotting
+        streets_df_global = streets_df.copy()
+
+        return spaces, streets, travel_times, nodes_df
+
+    except Exception as e:
+        messagebox.showerror("Error", f"Failed to load network data: {str(e)}")
+        raise
+
+# Load network data
+try:
+    spaces, streets, travel_times, nodes_df = load_network_data()
+    print("Network loaded successfully:")
+except Exception as e:
+    print(f"Error: {str(e)}")
+    input("Press Enter to exit...")
+    exit()

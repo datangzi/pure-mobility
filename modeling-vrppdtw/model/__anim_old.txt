@@ -1,0 +1,306 @@
+# ================== ANIMATION ==================
+from matplotlib.animation import FuncAnimation
+from matplotlib.patches import Circle
+from matplotlib.widgets import Button
+import numpy as np
+import pandas as pd
+
+def _nn(x):
+    s = str(x).strip()
+    return s[:-2] if s.endswith(".0") else s
+
+def classify_arc(row, setTransport, setWaiting, setService):
+    tup = (row['i'], row['j'], row['t'], row['s'], row['w'], row["w'"])
+    if tup in setTransport: return 'move'
+    if tup in setWaiting:   return 'wait'
+    if tup in setService:   return 'service'
+    return 'other'
+
+def build_segments(df, setTransport, setWaiting, setService, vehicle, OMEGA='Omega'):
+    df = df.copy()
+    df['i'] = df['i'].apply(_nn)
+    df['j'] = df['j'].apply(_nn)
+    df = df[df['j'] != OMEGA].copy()
+    df = df.sort_values(['t','s','i','j'])
+
+    segs = []
+    events = []  # list of (time:int, kind:str, payload:dict with 'p','node','veh')
+    for _, r in df.iterrows():
+        a_type = classify_arc(r, setTransport, setWaiting, setService)
+        if a_type == 'service':
+            if r['w'] == '_' and r["w'"] in ('p1','p2'):
+                events.append((int(r['t']), 'pickup', {'p': r["w'"], 'node': r['i'], 'veh': vehicle}))
+            elif r['w'] in ('p1','p2') and r["w'"] == '_':
+                events.append((int(r['t']), 'dropoff', {'p': r['w'], 'node': r['i'], 'veh': vehicle}))
+        elif a_type in ('move','wait'):
+            segs.append({'type': a_type, 'i': r['i'], 'j': r['j'], 't0': int(r['t']), 't1': int(r['s'])})
+    return segs, events
+
+def initial_node(df):
+    if df.empty: return None
+    r = df.sort_values(['t','s']).iloc[0]
+    return _nn(r['i'])
+
+def pickup_node_from_df(df, pax):
+    svc = df[(df['w']=='_') & (df["w'"]==pax)]
+    if svc.empty: return None
+    return _nn(svc.iloc[0]['i'])
+
+def create_layout_from_coords(nodes_df):
+    """Create position dictionary from actual x,y coordinates in nodes dataframe"""
+    pos = {}
+    for _, row in nodes_df.iterrows():
+        node_id = _nn(row['id'])
+        pos[node_id] = (row['x'], row['y'])
+    return pos
+
+def animate_routes(df_v1, df_v2, spaces, streets,
+                   setTransport, setWaiting, setService,
+                   nodes_df,
+                   key_nodes=None,
+                   OMEGA='Omega', FRAMES_PER_UNIT=12,
+                   SLOW_FACTOR=2,
+                   RADIUS=0.25, NODE_RADIUS=0.18,
+                   SHOW_NODE_LABELS=False):
+
+    # Colors / styles
+    COLOR_PAX = '#4a4a4a'     # dark gray
+    COLOR_TEXT_WHITE = '#ffffff'
+    COLOR_VEH_EMPTY_FILL = '#ffffff'
+    COLOR_VEH_BORDER = '#000000'
+
+    # Create layout from actual coordinates
+    pos = create_layout_from_coords(nodes_df)
+    
+    # Calculate plot bounds with some padding
+    x_coords = [x for x,y in pos.values()]
+    y_coords = [y for x,y in pos.values()]
+    x_min, x_max = min(x_coords), max(x_coords)
+    y_min, y_max = min(y_coords), max(y_coords)
+    padding = 1.0  # Add padding around the layout
+    
+    # Create figure and set bounds
+    fig, ax = plt.subplots(figsize=(8.4,8.0))
+    plt.subplots_adjust(bottom=0.22)
+    ax.set_xlim(x_min - padding, x_max + padding)
+    ax.set_ylim(y_min - padding, y_max + padding)
+    ax.set_aspect('equal')
+    ax.axis('off')
+
+    # draw edges using LineCollection for performance
+    segs = []
+    for (u,v) in streets:
+        u, v = _nn(u), _nn(v)
+        if u in pos and v in pos:
+            x1,y1 = pos[u]; x2,y2 = pos[v]
+            segs.append([(x1,y1),(x2,y2)])
+    if segs:
+        lc = LineCollection(segs, colors='#C8C8C8', linewidths=0.6, zorder=1)
+        ax.add_collection(lc)
+
+    # draw nodes as scatter for large OSM graphs
+    xs = [xy[0] for xy in pos.values()]
+    ys = [xy[1] for xy in pos.values()]
+    ax.scatter(xs, ys, s=(NODE_RADIUS*60), c='#f0f0f0', edgecolors='#999999', linewidths=0.4, zorder=2)
+
+    # optionally label only key nodes to avoid clutter
+    if SHOW_NODE_LABELS and key_nodes:
+        for name, nid in key_nodes.items():
+            nid = _nn(nid)
+            if nid in pos:
+                x,y = pos[nid]
+                ax.text(x, y+0.25, f"{name}", ha='center', va='bottom', fontsize=8, color='#444444', zorder=3)
+
+    # segments + events
+    segs_v1, ev_v1 = build_segments(df_v1, setTransport, setWaiting, setService, vehicle='v1', OMEGA=OMEGA)
+    segs_v2, ev_v2 = build_segments(df_v2, setTransport, setWaiting, setService, vehicle='v2', OMEGA=OMEGA)
+
+    # time horizon
+    T = 0
+    for seg in (segs_v1 + segs_v2):
+        T = max(T, seg['t1'])
+    total_frames = max(1, T * FRAMES_PER_UNIT)
+
+    # initial positions
+    start1 = initial_node(df_v1)
+    start2 = initial_node(df_v2)
+    x1,y1 = pos[start1] if start1 in pos else (0,0)
+    x2,y2 = pos[start2] if start2 in pos else (0,0)
+
+    # VEHICLES (same size as passengers), empty = white fill + black border
+    veh1 = Circle((x1,y1), RADIUS, facecolor=COLOR_VEH_EMPTY_FILL, edgecolor=COLOR_VEH_BORDER, linewidth=1.5, zorder=5)
+    veh2 = Circle((x2,y2), RADIUS, facecolor=COLOR_VEH_EMPTY_FILL, edgecolor=COLOR_VEH_BORDER, linewidth=1.5, zorder=5)
+    ax.add_patch(veh1); ax.add_patch(veh2)
+
+    # Vehicle name labels ABOVE circles (static text “v1/v2”, follows position)
+    label_offset = RADIUS + 0.18
+    veh1_name = ax.text(x1, y1 + label_offset, "v1", ha='center', va='bottom', fontsize=10, color='#111111', zorder=6)
+    veh2_name = ax.text(x2, y2 + label_offset, "v2", ha='center', va='bottom', fontsize=10, color='#111111', zorder=6)
+
+    # Center text inside vehicle showing passengers when carrying (dynamic)
+    veh1_center_txt = ax.text(x1, y1, "", ha='center', va='center', fontsize=10, color=COLOR_TEXT_WHITE, zorder=6)
+    veh2_center_txt = ax.text(x2, y2, "", ha='center', va='center', fontsize=10, color=COLOR_TEXT_WHITE, zorder=6)
+
+    # PASSENGERS: dark gray fill, no border, white center text
+    both = pd.concat([df_v1, df_v2], ignore_index=True)
+    p1_pick = pickup_node_from_df(both, 'p1')
+    p2_pick = pickup_node_from_df(both, 'p2')
+    if p1_pick and p1_pick in pos: px,py = pos[p1_pick]
+    else: px,py = (x1,y1)
+    if p2_pick and p2_pick in pos: qx,qy = pos[p2_pick]
+    else: qx,qy = (x2,y2)
+
+    pax1 = Circle((px,py), RADIUS, facecolor=COLOR_PAX, edgecolor='none', zorder=4)
+    pax2 = Circle((qx,qy), RADIUS, facecolor=COLOR_PAX, edgecolor='none', zorder=4)
+    ax.add_patch(pax1); ax.add_patch(pax2)
+    pax1_txt = ax.text(px, py, "p1", ha='center', va='center', fontsize=10, color=COLOR_TEXT_WHITE, zorder=6)
+    pax2_txt = ax.text(qx, qy, "p2", ha='center', va='center', fontsize=10, color=COLOR_TEXT_WHITE, zorder=6)
+
+    # which passengers are currently riding with each vehicle (support 0/1/2)
+    riding = {'v1': set(), 'v2': set()}
+
+    # helpers
+    def seg_at_time(segs, t):
+        for s in segs:
+            if s['t0'] <= t < s['t1']:
+                return s
+        return None
+
+    # group service events at integer times
+    from collections import defaultdict
+    service_events = defaultdict(list)
+    for tt, kind, pl in (ev_v1 + ev_v2):
+        service_events[int(tt)].append((kind, pl, pl['veh']))
+
+    # --- buttons ---
+    ax_start  = plt.axes([0.22, 0.07, 0.22, 0.09])
+    ax_replay = plt.axes([0.56, 0.07, 0.22, 0.09])
+    btn_start = Button(ax_start, 'Start')
+    btn_replay = Button(ax_replay, 'Replay')
+
+    ani = None  # FuncAnimation instance
+
+    def reset_state():
+        """Reset positions, visibility, colors, and labels."""
+        veh1.center = (x1,y1); veh2.center = (x2,y2)
+        veh1.set_facecolor(COLOR_VEH_EMPTY_FILL); veh2.set_facecolor(COLOR_VEH_EMPTY_FILL)
+        veh1_name.set_position((x1, y1 + label_offset)); veh2_name.set_position((x2, y2 + label_offset))
+        veh1_center_txt.set_text(""); veh2_center_txt.set_text("")
+        veh1_center_txt.set_position((x1,y1)); veh2_center_txt.set_position((x2,y2))
+
+        pax1.center = (px,py); pax1.set_visible(True); pax1_txt.set_position((px,py)); pax1_txt.set_visible(True)
+        pax2.center = (qx,qy); pax2.set_visible(True); pax2_txt.set_position((qx,qy)); pax2_txt.set_visible(True)
+
+        riding['v1'].clear(); riding['v2'].clear()
+        fig.canvas.draw_idle()
+
+    def update_vehicle_visuals():
+        """Apply fill color and center label based on riding sets."""
+        # Vehicle 1
+        if riding['v1']:
+            veh1.set_facecolor(COLOR_PAX)
+            veh1_center_txt.set_text(",".join(sorted(riding['v1'])))
+        else:
+            veh1.set_facecolor(COLOR_VEH_EMPTY_FILL)
+            veh1_center_txt.set_text("")
+        # Vehicle 2
+        if riding['v2']:
+            veh2.set_facecolor(COLOR_PAX)
+            veh2_center_txt.set_text(",".join(sorted(riding['v2'])))
+        else:
+            veh2.set_facecolor(COLOR_VEH_EMPTY_FILL)
+            veh2_center_txt.set_text("")
+
+    def update(frame_idx):
+        # 3× slower via interval below
+        t_cont = frame_idx / FRAMES_PER_UNIT
+        t_int  = int(round(t_cont))
+
+        # Zero-time service events at integer times
+        if (frame_idx % FRAMES_PER_UNIT) == 0:
+            for kind, pl, veh in service_events.get(t_int, []):
+                if kind == 'pickup':
+                    # hide pax; add to riding set
+                    if pl['p'] == 'p1':
+                        pax1.set_visible(False); pax1_txt.set_visible(False)
+                        riding[veh].add('p1')
+                    elif pl['p'] == 'p2':
+                        pax2.set_visible(False); pax2_txt.set_visible(False)
+                        riding[veh].add('p2')
+                    update_vehicle_visuals()
+                elif kind == 'dropoff':
+                    node = pl['node']
+                    if node in pos:
+                        if 'p1' in riding[veh]:
+                            pax1.center = pos[node]; pax1_txt.set_position(pos[node])
+                            pax1.set_visible(True); pax1_txt.set_visible(True)
+                            riding[veh].discard('p1')
+                        if 'p2' in riding[veh]:
+                            pax2.center = pos[node]; pax2_txt.set_position(pos[node])
+                            pax2.set_visible(True); pax2_txt.set_visible(True)
+                            riding[veh].discard('p2')
+                    update_vehicle_visuals()
+
+        # vehicle 1 motion
+        seg1 = seg_at_time(segs_v1, t_cont)
+        if seg1 is not None:
+            (x_from, y_from) = pos[seg1['i']]
+            (x_to,   y_to)   = pos[seg1['j']]
+            alpha = (t_cont - seg1['t0']) / (seg1['t1'] - seg1['t0']) if (seg1['type']=='move' and seg1['t1']>seg1['t0']) else 0.0
+            x = x_from + (x_to - x_from) * alpha
+            y = y_from + (y_to - y_from) * alpha
+            veh1.center = (x,y)
+            veh1_name.set_position((x, y + label_offset))
+            veh1_center_txt.set_position((x, y))
+
+        # vehicle 2 motion
+        seg2 = seg_at_time(segs_v2, t_cont)
+        if seg2 is not None:
+            (x_from, y_from) = pos[seg2['i']]
+            (x_to,   y_to)   = pos[seg2['j']]
+            alpha = (t_cont - seg2['t0']) / (seg2['t1'] - seg2['t0']) if (seg2['type']=='move' and seg2['t1']>seg2['t0']) else 0.0
+            x = x_from + (x_to - x_from) * alpha
+            y = y_from + (y_to - y_from) * alpha
+            veh2.center = (x,y)
+            veh2_name.set_position((x, y + label_offset))
+            veh2_center_txt.set_position((x, y))
+
+        return veh1, veh2, pax1, pax2, veh1_name, veh2_name, veh1_center_txt, veh2_center_txt, pax1_txt, pax2_txt
+
+    interval_ms = int(SLOW_FACTOR * 1000 / FRAMES_PER_UNIT)
+
+    def start_clicked(event):
+        nonlocal ani
+        reset_state()
+        if ani is not None:
+            try: ani.event_source.stop()
+            except Exception: pass
+        ani = FuncAnimation(fig, update, frames=total_frames+1,
+                            interval=interval_ms, blit=False, repeat=False)
+        fig.canvas.draw_idle()
+
+    def replay_clicked(event):
+        start_clicked(event)
+
+    btn_start.on_clicked(start_clicked)
+    btn_replay.on_clicked(replay_clicked)
+
+    plt.title("VRPPDTW – Animation (vehicles: white; carrying → dark gray)")
+    plt.show()
+
+# -------- run the animation UI if solved --------
+if model.status == pulp.LpStatusOptimal:
+    key_nodes = {
+        'START_v1': START_v1,
+        'START_v2': START_v2,
+        'PICKUP_p1': PICKUP_p1,
+        'DROPOFF_p1': DROPOFF_p1,
+        'PICKUP_p2': PICKUP_p2,
+        'DROPOFF_p2': DROPOFF_p2,
+    }
+    animate_routes(df_solution_v1, df_solution_v2, spaces, streets,
+                   setTransport, setWaiting, setService,
+                   nodes_df=nodes_df,
+                   key_nodes=key_nodes,
+                   OMEGA=OMEGA, FRAMES_PER_UNIT=12, SLOW_FACTOR=3,
+                   SHOW_NODE_LABELS=False)

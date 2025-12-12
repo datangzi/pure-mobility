@@ -1,0 +1,18 @@
+{
+  "scenario_name": "vrp_scenario",
+  "n": 1,
+  "m": 1,
+  "passengers": [
+    {
+      "id": 1,
+      "pickup_node": 26704515,
+      "dropoff_node": 21487105
+    }
+  ],
+  "vehicles": [
+    {
+      "id": 1,
+      "start_node": 5257308490
+    }
+  ]
+}
