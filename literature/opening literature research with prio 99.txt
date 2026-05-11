@@ -1,0 +1,21 @@
+# To be checked before throwing in trash
+
+- Optimal Operation of Shared Autonomous Electric Vehicles For Mobility-On-Demand Applications
+
+	- link: https://ieeexplore.ieee.org/document/11360211
+	- reason: what was valuably in this paper?? (Published in 2025 with implementation of interger linear program for solving vrp Problem)
+
+- Machine Learning for Macroscopic Traffic Modeling and Optimization
+
+	- Link: https://think.taylorandfrancis.com/special_issues/machine-learning-for-macroscopic-traffic-modeling-and-optimization/
+	- reason: sees like a call for papers
+
+- Distributed Macroscopic Traffic Simulation with Open Traffic Models
+
+	- Link: https://docs.nlr.gov/docs/fy21osti/76996.pdf
+	- reason: a open sourced tool for parallel computing, which can be used in the future Research?
+
+- Autonomous Fleet Management for Autonomy: Challenges, Strategies, and Use Cases
+
+	- Link: https://www.digitaldividedata.com/blog/autonomous-fleet-management-for-autonomy
+	- reason: Opening Research Points may be found in the article.

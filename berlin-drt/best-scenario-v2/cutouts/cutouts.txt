@@ -1,0 +1,7 @@
+Reinickendorf -> 14500.00,18300.00 14500.00,22200.00 18500.00,22200.00 18500.00,18300.00 14500.00,18300.00
+charlottenburg -> 11386.348983,16581.460126 14764.049577,17313.295255 16689.338915,14611.134780 16193.942828,12393.111389 12681.134210,11841.420292 11656.565030,13519.011587 11386.348983,16581.460126
+mitte -> 16238.978836,16403.567895 16907.763554,12551.863317 21985.573447,12663.327437 22802.976991,13616.964905 23285.988176,15511.854938 22307.580904,17208.586536 19607.672229,18211.763613 16238.978836,16428.337699
+
+netconvert -s berlin.net.xml -o cutout.net.xml  --keep-edges.in-boundary "see above" -v
+py %SUMO_HOME%\tools\route\cutRoutes.py cutout.net.xml berlin.rou.gz --routes-output cutout.rou.xml --orig-net berlin.net.xml
+py %SUMO_HOME%\tools\route\cutRoutes.py cutout.net.xml berlin_bus.rou.xml --routes-output cutout_bus.rou.xml --orig-net berlin.net.xml --additional-input berlin_bus_stops.add.xml --stops-output cutout_bus_stops.add.xml

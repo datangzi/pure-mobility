@@ -1,0 +1,663 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2025-05-16 16:30:32.226975 by cutRoutes.py v1_23_0+0000-ad042bb7d28
+<configuration>
+    <routes-output value="charlottenburg_bus.rou.xml"/>
+    <stops-output value="charlottenburg_bus_stops.add.xml"/>
+    <additional-input value="..\..\berlin_bus_stops.add.xml"/>
+    <orig-net value="..\..\berlin.net.xml"/>
+    <network value="charlottenburg.net.xml"/>
+    <routeFiles value="..\..\berlin_bus.rou.xml"/>
+</configuration>
+-->
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    <vType id="bus" vClass="bus"/>
+    <route id="120_9828" color="240,215,34" edges="461317445#2 461317445#3 461317445#4 461317445#5 472077822#2 4594894#0 4594894#4 4594652#1 39492180#1 39492180#2 39492180#3 39492180#4 57936172 57936174#1 57936174#6 57936174#7 57936174#8 57936174#12 -34570668 -4581771#13 -4581771#8 -4581771#3 -4581771#2 39490176#1 39490176#2 39490176#3 39490176#5 39490176#9 34928182#0 4543585#1 4543585#2 4543585#7 42732296 42732298#0 111251389#1 375861849 375861848">
+        <stop busStop="agg_9828_19_11957_26" duration="20.0" until="60.0" parking="true"/>
+        <stop busStop="agg_9828_20_11060_9_11065_0_11957_27" duration="20.0" until="120.0" parking="true"/>
+        <stop busStop="agg_9828_21_11067_22_11957_28_11921_22" duration="20.0" until="240.0" parking="true"/>
+        <stop busStop="agg_9828_22_11957_29" duration="20.0" until="300.0" parking="true"/>
+        <stop busStop="agg_9828_23_11957_30" duration="20.0" until="360.0" parking="true"/>
+        <stop busStop="agg_9828_24_11957_31" duration="20.0" until="420.0" parking="true"/>
+        <stop busStop="agg_9828_25_11957_32" duration="20.0" until="480.0" parking="true"/>
+        <stop busStop="agg_9828_26_11957_33" duration="20.0" until="540.0" parking="true"/>
+        <stop busStop="agg_9828_27_11957_34" duration="20.0" until="660.0" parking="true"/>
+        <stop busStop="agg_9828_28_11880_15_11957_35" duration="20.0" until="720.0" parking="true"/>
+        <stop busStop="agg_9828_29_11880_16_11957_36" duration="20.0" until="900.0" parking="true"/>
+        <stop busStop="agg_9828_30_11880_17_11957_37" duration="20.0" until="1020.0" parking="true"/>
+        <stop busStop="9828_31" duration="20.0" until="1080.0" parking="true"/>
+        <stop busStop="agg_9828_32_10099_29_10103_28_10109_0_10789_24_11082_0_10785_0_10691_0_11085_17_10094_0_10683_32_9836_0" duration="20.0" until="1140.0" parking="true"/>
+    </route>
+    <route id="147_10103" color="240,215,34" edges="374152364#1 4543586#1 42732296 42732298#0 111251389#1 375861849 375861848">
+        <stop busStop="agg_10099_28_10103_27_11082_1_10785_1_11962_9_11882_28_10683_31_9836_1" duration="20.0" until="120.0" parking="true"/>
+        <stop busStop="agg_9828_32_10099_29_10103_28_10109_0_10789_24_11082_0_10785_0_10691_0_11085_17_10094_0_10683_32_9836_0" duration="20.0" until="300.0" parking="true"/>
+    </route>
+    <route id="122_9844" color="240,215,34" edges="-32882577#1 -32882577#0 -40816891#4 -40816891#3 -40816891#2 -40816891#1 -40816891#0 381235978 40816963#0 4546470#1 4546470#2 4546470#3 4546470#4 4546470#5 40817054#1 34570656#0 24295533#2 24295532#0 24295532#1 24295532#2 24295532#3 24295532#4 4594655#1 454710689#0 -340338266#0 -61743145#0 -61743144 -34570576#1 -34570576#0 33927189#1 33927189#2 753600444#2 -54892584#0">
+        <stop busStop="9844_4" duration="20.0" until="60.0" parking="true"/>
+        <stop busStop="9844_5" duration="20.0" until="120.0" parking="true"/>
+        <stop busStop="agg_11067_21_11921_21_9844_6" duration="20.0" until="180.0" parking="true"/>
+        <stop busStop="9844_7" duration="20.0" until="240.0" parking="true"/>
+        <stop busStop="9844_8" duration="20.0" until="300.0" parking="true"/>
+        <stop busStop="agg_9922_41_9844_9" duration="20.0" until="360.0" parking="true"/>
+        <stop busStop="agg_9922_42_9844_10" duration="20.0" until="420.0" parking="true"/>
+        <stop busStop="agg_9922_43_9844_11" duration="20.0" until="480.0" parking="true"/>
+        <stop busStop="agg_11923_28_11082_9_9844_12" duration="20.0" until="600.0" parking="true"/>
+        <stop busStop="agg_11923_29_11082_10_9844_13" duration="20.0" until="660.0" parking="true"/>
+        <stop busStop="9844_14" duration="20.0" until="780.0" parking="true"/>
+        <stop busStop="9844_15" duration="20.0" until="840.0" parking="true"/>
+        <stop busStop="9844_16" duration="20.0" until="960.0" parking="true"/>
+    </route>
+    <route id="255_10818" color="240,215,34" edges="-160131077 4632780#0 -71882012#0 -205079424#2 -814447490#1 -8150022#2 -4610130#2 426100318#1 82455845 4544061#1 119201838 4544062#0 456213456">
+        <stop busStop="agg_11518_7_10818_27" duration="20.0" until="60.0" parking="true"/>
+        <stop busStop="10818_28" duration="20.0" until="120.0" parking="true"/>
+        <stop busStop="10818_29" duration="20.0" until="240.0" parking="true"/>
+        <stop busStop="agg_10818_30_10120_34_12038_9" duration="20.0" until="360.0" parking="true"/>
+        <stop busStop="agg_10818_31_10120_35_12038_10" duration="20.0" until="420.0" parking="true"/>
+        <stop busStop="agg_11941_0_11943_25_10818_32_10120_36_11941_1_12038_11" duration="20.0" until="480.0" parking="true"/>
+        <stop busStop="agg_10115_0_9908_0_12037_0_9922_53_10818_33_10120_37_12038_12_9929_11_9931_0" duration="20.0" until="600.0" parking="true"/>
+    </route>
+    <route id="122_9852" color="240,215,34" edges="73671301#1 54892584#2 -753600444#0 -33927189#1 -33927189#0 34570576#1 61743144 61743145#0 142138184#2 4594653#1 4594653#2 -24295532#4 -24295532#3 -24295532#2 -24295532#1 -24295532#0 4638312#0 5117653#1 34570658#0 -4546470#5 -4546470#4 -4546470#3 -4546470#2 -4546470#1 172432949#1 381235979 40816891#0 40816891#1 40816891#2 40816891#3 40816891#4 32882577#0 32882577#1">
+        <stop busStop="9852_30" duration="20.0" until="120.0" parking="true"/>
+        <stop busStop="9852_31" duration="20.0" until="180.0" parking="true"/>
+        <stop busStop="agg_9852_32_11085_7" duration="20.0" until="300.0" parking="true"/>
+        <stop busStop="agg_9852_33_11085_8_11921_23" duration="20.0" until="360.0" parking="true"/>
+        <stop busStop="agg_9908_9_9852_34" duration="20.0" until="480.0" parking="true"/>
+        <stop busStop="agg_9908_10_9852_35" duration="20.0" until="540.0" parking="true"/>
+        <stop busStop="agg_9908_11_9852_36" duration="20.0" until="600.0" parking="true"/>
+        <stop busStop="agg_9908_12_9852_37" duration="20.0" until="660.0" parking="true"/>
+        <stop busStop="9852_38" duration="20.0" until="720.0" parking="true"/>
+        <stop busStop="9852_39" duration="20.0" until="780.0" parking="true"/>
+        <stop busStop="agg_11923_31_11065_1_9852_40" duration="20.0" until="840.0" parking="true"/>
+        <stop busStop="9852_41" duration="20.0" until="900.0" parking="true"/>
+        <stop busStop="9852_42" duration="20.0" until="960.0" parking="true"/>
+    </route>
+    <route id="M27_11523" color="240,215,34" edges="4543924#0 24700558#6 381497919#0 381497919#1 162965650#1 761539110#2 4544075 4632777#1 4632777#4 119201849#1 25500703">
+        <stop busStop="11523_18" duration="20.0" until="60.0" parking="true"/>
+        <stop busStop="11523_19" duration="20.0" until="120.0" parking="true"/>
+        <stop busStop="11523_20" duration="20.0" until="300.0" parking="true"/>
+        <stop busStop="11523_21" duration="20.0" until="360.0" parking="true"/>
+        <stop busStop="11523_22" duration="20.0" until="480.0" parking="true"/>
+        <stop busStop="11523_23" duration="20.0" until="540.0" parking="true"/>
+    </route>
+    <route id="M21_11514" color="240,215,34" edges="420492431#10 420492431#11 638684659 37304507#0 37304507#1 37304507#2 420492432#1 420492432#2 39965120#1 39965120#2">
+        <stop busStop="agg_11514_18_11921_17_12462_10" duration="20.0" until="60.0" parking="true"/>
+        <stop busStop="11514_19" duration="20.0" until="120.0" parking="true"/>
+        <stop busStop="11514_20" duration="20.0" until="180.0" parking="true"/>
+    </route>
+    <route id="250_10817" color="240,215,34" edges="-23984385 -10856598 -22983236 -4637771#1 -4637771#0 35867462#0 10755765#2 10755765#3 -28983637#12 -28983637#11 -28983637#9 -28983637#8 -28983637#6 -28983637#5 -28983637#2 -28983637#1 352683183#1 352683183#3 183583891#0 183583891#1 -82456678 42378113#0 82456679#0 -413560020#0">
+        <stop busStop="10817_25" duration="20.0" until="60.0" parking="true"/>
+        <stop busStop="10817_26" duration="20.0" until="180.0" parking="true"/>
+        <stop busStop="agg_10817_27_10120_33_12038_8" duration="20.0" until="360.0" parking="true"/>
+        <stop busStop="10817_28" duration="20.0" until="420.0" parking="true"/>
+        <stop busStop="agg_9922_50_10817_29" duration="20.0" until="480.0" parking="true"/>
+        <stop busStop="agg_11923_25_10817_30_9931_2" duration="20.0" until="540.0" parking="true"/>
+        <stop busStop="agg_11923_26_10817_31_11082_7" duration="20.0" until="600.0" parking="true"/>
+        <stop busStop="agg_10817_32_10814_0_10814_1" duration="20.0" until="660.0" parking="true"/>
+    </route>
+    <route id="155_10155" color="240,215,34" edges="200128494#4 200128494#5 200128494#6 206005649 102532387#1 23984497#1 23984498#2">
+        <stop busStop="10155_9" duration="20.0" until="60.0" parking="true"/>
+        <stop busStop="10155_10" duration="20.0" until="180.0" parking="true"/>
+        <stop busStop="agg_10115_8_12037_8_10155_11" duration="20.0" until="240.0" parking="true"/>
+    </route>
+    <route id="M21_11516" color="240,215,34" edges="161241449#2 39965424#0 39965424#4 39965425#0 420492437#1 420492437#2 420492437#3 -62192859 62192860#0 62192860#1">
+        <stop busStop="11516_13" duration="20.0" until="60.0" parking="true"/>
+        <stop busStop="agg_11516_14_11923_34" duration="20.0" until="120.0" parking="true"/>
+        <stop busStop="agg_11516_15_11923_35_12464_5" duration="20.0" until="180.0" parking="true"/>
+        <stop busStop="agg_11516_16_11923_36" duration="20.0" until="240.0" parking="true"/>
+    </route>
+    <route id="N20_11962" color="240,215,34" edges="374152364#1 4543586#1 42732291#0 42732291#4 42732291#6 338527878#0 4071971#1 34928183#4 34928183#7 377994689#1 377994688 112886549#0 4581771#2 4581771#3 4581771#8 4581771#13 34570668 4581788#0 4581788#1 4581788#5 4581788#6 4581788#7 4581788#8 4638317#1 4638317#2 57936173#0 57936173#1 57936173#2 57936173#3 31910525#1 454719091#0 25788143#1 25788143#5 25788143#6 -605652305 -472077822#0 -461317445#4 -461317445#3 -461317445#2">
+        <stop busStop="agg_10099_28_10103_27_11082_1_10785_1_11962_9_11882_28_10683_31_9836_1" duration="20.0" until="360.0" parking="true"/>
+        <stop busStop="agg_11962_10_11882_29_9836_2" duration="20.0" until="420.0" parking="true"/>
+        <stop busStop="agg_11962_11_11882_30_9836_3" duration="20.0" until="480.0" parking="true"/>
+        <stop busStop="agg_11962_12_11882_31_9836_4" duration="20.0" until="600.0" parking="true"/>
+        <stop busStop="agg_11962_13_9836_5" duration="20.0" until="660.0" parking="true"/>
+        <stop busStop="agg_11962_14_9836_6" duration="20.0" until="720.0" parking="true"/>
+        <stop busStop="agg_11962_15_9836_7" duration="20.0" until="780.0" parking="true"/>
+        <stop busStop="agg_11962_16_9836_8" duration="20.0" until="810.0" parking="true"/>
+        <stop busStop="agg_11962_17_9836_9" duration="20.0" until="840.0" parking="true"/>
+        <stop busStop="agg_11962_18_9836_10" duration="20.0" until="900.0" parking="true"/>
+        <stop busStop="agg_11923_30_11060_1_11962_19_9836_11" duration="20.0" until="1020.0" parking="true"/>
+        <stop busStop="agg_11060_2_11962_20_9836_12" duration="20.0" until="1080.0" parking="true"/>
+        <stop busStop="agg_11060_3_11962_21_9836_13" duration="20.0" until="1140.0" parking="true"/>
+    </route>
+    <route id="M27_11518" color="240,215,34" edges="-160131077 4632780#0 119201855#2 119201855#5 4544070 162965649#1 162965649#3 4543925#1 4543925#2 381497916 381497908#0 381497908#6">
+        <stop busStop="agg_11518_7_10818_27" duration="20.0" until="60.0" parking="true"/>
+        <stop busStop="11518_8" duration="20.0" until="120.0" parking="true"/>
+        <stop busStop="11518_9" duration="20.0" until="240.0" parking="true"/>
+        <stop busStop="11518_10" duration="20.0" until="360.0" parking="true"/>
+        <stop busStop="11518_11" duration="20.0" until="420.0" parking="true"/>
+        <stop busStop="11518_12" duration="20.0" until="480.0" parking="true"/>
+    </route>
+    <route id="N8_11921" color="240,215,34" edges="420492431#10 420492431#11 638684659 37304507#0 37304507#1 37304507#2 4675211#2 4675211#3 4675211#4 381235978 40816963#0 4594652#1 31910522#2 31910522#3 4594653#1 4594653#2 4638313#1 4638313#2 4638313#3 4638313#4 727598635#1 727598635#2 727598635#3 727598635#4 147432180#0 25630356#1 183583889#2 82456678 28507651 10857086#0 123908293#1 501402607#1 501402606 863796775 28710921#0 25631014#1 25631014#2 25631014#3 10857116 387290326 35133590 24700640#1 24700640#2 24700640#7 24700640#8 24700640#12 24700640#13 317871675#0 42732317#1 122475240 240144485 4740759#0 317871682#1 317871682#2">
+        <stop busStop="agg_11514_18_11921_17_12462_10" duration="20.0" until="30.0" parking="true"/>
+        <stop busStop="agg_11067_18_11921_18" duration="20.0" until="60.0" parking="true"/>
+        <stop busStop="agg_11067_19_11921_19" duration="20.0" until="120.0" parking="true"/>
+        <stop busStop="agg_11067_20_11921_20" duration="20.0" until="180.0" parking="true"/>
+        <stop busStop="agg_11067_21_11921_21_9844_6" duration="20.0" until="240.0" parking="true"/>
+        <stop busStop="agg_9828_21_11067_22_11957_28_11921_22" duration="20.0" until="300.0" parking="true"/>
+        <stop busStop="agg_9852_33_11085_8_11921_23" duration="20.0" until="360.0" parking="true"/>
+        <stop busStop="agg_11085_9_11921_24" duration="20.0" until="420.0" parking="true"/>
+        <stop busStop="agg_11085_10_11921_25" duration="20.0" until="480.0" parking="true"/>
+        <stop busStop="agg_11085_11_11921_26" duration="20.0" until="540.0" parking="true"/>
+        <stop busStop="agg_11921_27_9929_9" duration="20.0" until="600.0" parking="true"/>
+        <stop busStop="agg_9922_52_11921_28_9929_10" duration="20.0" until="780.0" parking="true"/>
+        <stop busStop="11921_29" duration="20.0" until="900.0" parking="true"/>
+        <stop busStop="11921_30" duration="20.0" until="960.0" parking="true"/>
+        <stop busStop="11921_31" duration="20.0" until="1080.0" parking="true"/>
+        <stop busStop="agg_10785_10_11921_32" duration="20.0" until="1200.0" parking="true"/>
+    </route>
+    <route id="N26_11978" color="240,215,34" edges="377739469#3 377739463#0 375097974#1 596976350#1 338527884#0 338527882#1 338527887#0 338527886#1">
+        <stop busStop="agg_11979_24_9661_0_11978_0_9669_37" duration="20.0" until="20.0" parking="true"/>
+        <stop busStop="agg_9661_1_11978_1" duration="20.0" until="80.0" parking="true"/>
+        <stop busStop="agg_9661_2_11978_2" duration="20.0" until="140.0" parking="true"/>
+        <stop busStop="agg_9661_3_11978_3" duration="20.0" until="200.0" parking="true"/>
+    </route>
+    <route id="N26_11979" color="240,215,34" edges="120231000#1 375097980#0 375097982#1 375097973#0 375097975#1 375097966 375097972#0 375097977#1 375097963 375097970#0 28496796#1 377739461 28335565#1 377739469#3">
+        <stop busStop="agg_11979_20_9669_33" duration="20.0" until="60.0" parking="true"/>
+        <stop busStop="agg_11979_21_9669_34" duration="20.0" until="120.0" parking="true"/>
+        <stop busStop="agg_11979_22_9669_35" duration="20.0" until="180.0" parking="true"/>
+        <stop busStop="agg_11979_23_9669_36" duration="20.0" until="240.0" parking="true"/>
+        <stop busStop="agg_11979_24_9661_0_11978_0_9669_37" duration="20.0" until="360.0" parking="true"/>
+    </route>
+    <route id="N6_11882" color="240,215,34" edges="374152364#1 4543586#1 42732291#0 42732291#4 42732291#6 338527878#0 4071971#1 34928183#4 34928183#7 377994689#1 377994688 112886549#0 39490173#1 39490173#2 39490173#6 39490173#7 160130963#2 160130963#3 441755602 283022995#0">
+        <stop busStop="agg_10099_28_10103_27_11082_1_10785_1_11962_9_11882_28_10683_31_9836_1" duration="20.0" until="300.0" parking="true"/>
+        <stop busStop="agg_11962_10_11882_29_9836_2" duration="20.0" until="360.0" parking="true"/>
+        <stop busStop="agg_11962_11_11882_30_9836_3" duration="20.0" until="420.0" parking="true"/>
+        <stop busStop="agg_11962_12_11882_31_9836_4" duration="20.0" until="540.0" parking="true"/>
+        <stop busStop="11882_32" duration="20.0" until="660.0" parking="true"/>
+        <stop busStop="11882_33" duration="20.0" until="720.0" parking="true"/>
+    </route>
+    <route id="N6_11880" color="240,215,34" edges="28427117#1 283022997 4071975#2 4071975#7 4071975#11 4071975#12 39490176#1 39490176#2 39490176#3 39490176#5 39490176#9 34928182#0 4543585#1 4543585#2 4543585#7 4543585#8 4543589#1">
+        <stop busStop="11880_13" duration="20.0" until="180.0" parking="true"/>
+        <stop busStop="11880_14" duration="20.0" until="240.0" parking="true"/>
+        <stop busStop="agg_9828_28_11880_15_11957_35" duration="20.0" until="300.0" parking="true"/>
+        <stop busStop="agg_9828_29_11880_16_11957_36" duration="20.0" until="420.0" parking="true"/>
+        <stop busStop="agg_9828_30_11880_17_11957_37" duration="20.0" until="480.0" parking="true"/>
+        <stop busStop="agg_10109_1_11880_18_11957_38" duration="20.0" until="600.0" parking="true"/>
+    </route>
+    <route id="N8_11923" color="240,215,34" edges="42732321#1 42732321#2 317871679 1066931411 420522783#0 420522783#1 420522783#2 420522783#3 420522783#4 420522783#5 1080959474#1 590593440.128 4740761#0 42732314#1 42732314#2 42732314#3 42732314#7 42732314#8 42732314#13 42732314#14 24700642#0 24700642#1 24700642#2 24700641 10856951#0 10856951#1 863796777#0 863796776#1 863796776#2 456213457 352683182#4 352683183#1 352683183#3 183583891#0 183583891#1 -82456678 42378113#0 82456679#0 4638316#1 4638316#2 4638316#3 4638316#4 727598634#0 727598634#1 727598634#2 4594655#1 454710689#0 4067951#1 31910525#1 454719091#0 172432949#1 381235979 40816964#0 40816964#1 40816964#2 442910641#0 420492437#1 420492437#2 420492437#3 -62192859 62192860#0 62192860#1">
+        <stop busStop="agg_11923_19_10789_15" duration="20.0" until="60.0" parking="true"/>
+        <stop busStop="agg_11923_20_10789_16" duration="20.0" until="120.0" parking="true"/>
+        <stop busStop="11923_21" duration="20.0" until="240.0" parking="true"/>
+        <stop busStop="11923_22" duration="20.0" until="300.0" parking="true"/>
+        <stop busStop="11923_23" duration="20.0" until="480.0" parking="true"/>
+        <stop busStop="agg_11923_24_9908_1_9931_1" duration="20.0" until="510.0" parking="true"/>
+        <stop busStop="agg_11923_25_10817_30_9931_2" duration="20.0" until="540.0" parking="true"/>
+        <stop busStop="agg_11923_26_10817_31_11082_7" duration="20.0" until="600.0" parking="true"/>
+        <stop busStop="agg_11923_27_11082_8" duration="20.0" until="660.0" parking="true"/>
+        <stop busStop="agg_11923_28_11082_9_9844_12" duration="20.0" until="720.0" parking="true"/>
+        <stop busStop="agg_11923_29_11082_10_9844_13" duration="20.0" until="780.0" parking="true"/>
+        <stop busStop="agg_11923_30_11060_1_11962_19_9836_11" duration="20.0" until="900.0" parking="true"/>
+        <stop busStop="agg_11923_31_11065_1_9852_40" duration="20.0" until="930.0" parking="true"/>
+        <stop busStop="agg_11923_32_11065_2" duration="20.0" until="960.0" parking="true"/>
+        <stop busStop="agg_11923_33_11065_3" duration="20.0" until="1020.0" parking="true"/>
+        <stop busStop="agg_11516_14_11923_34" duration="20.0" until="1080.0" parking="true"/>
+        <stop busStop="agg_11516_15_11923_35_12464_5" duration="20.0" until="1140.0" parking="true"/>
+        <stop busStop="agg_11516_16_11923_36" duration="20.0" until="1170.0" parking="true"/>
+    </route>
+    <route id="N9_11943" color="240,215,34" edges="373996558#1 373996562#0 5120960#1 37740224#0 42732301#1 42732301#2 42732301#5 375861850#0 4571515#2 4571515#3 -35070312#0 -4594210 447792213 119201846#1 4544064#0 4637761#1 426100325#0 426100318#1 82455845">
+        <stop busStop="11943_20" duration="20.0" until="240.0" parking="true"/>
+        <stop busStop="agg_11082_2_10785_2_11943_21" duration="20.0" until="300.0" parking="true"/>
+        <stop busStop="agg_10785_3_11943_22" duration="20.0" until="360.0" parking="true"/>
+        <stop busStop="11943_23" duration="20.0" until="420.0" parking="true"/>
+        <stop busStop="agg_10115_1_12037_1_11943_24" duration="20.0" until="540.0" parking="true"/>
+        <stop busStop="agg_11941_0_11943_25_10818_32_10120_36_11941_1_12038_11" duration="20.0" until="660.0" parking="true"/>
+    </route>
+    <route id="N52_12038" color="240,215,34" edges="82469454 4610131#0 4610131#1 28819804 142138183#0 142138183#1 142138183#2 142138183#4 142138183#5 142138183#6 35867462#0 35867463#2 147432169#0 147432169#1 -4610130#2 426100318#1 82455845 4544061#1 119201838 4544062#0 456213456">
+        <stop busStop="agg_10153_7_10120_29_12038_4" duration="20.0" until="30.0" parking="true"/>
+        <stop busStop="agg_11082_15_10120_30_12038_5" duration="20.0" until="90.0" parking="true"/>
+        <stop busStop="agg_11082_16_10120_31_11085_0_12038_6" duration="20.0" until="120.0" parking="true"/>
+        <stop busStop="agg_10120_32_12038_7" duration="20.0" until="150.0" parking="true"/>
+        <stop busStop="agg_10817_27_10120_33_12038_8" duration="20.0" until="210.0" parking="true"/>
+        <stop busStop="agg_10818_30_10120_34_12038_9" duration="20.0" until="270.0" parking="true"/>
+        <stop busStop="agg_10818_31_10120_35_12038_10" duration="20.0" until="330.0" parking="true"/>
+        <stop busStop="agg_11941_0_11943_25_10818_32_10120_36_11941_1_12038_11" duration="20.0" until="390.0" parking="true"/>
+        <stop busStop="agg_10115_0_9908_0_12037_0_9922_53_10818_33_10120_37_12038_12_9929_11_9931_0" duration="20.0" until="510.0" parking="true"/>
+    </route>
+    <route id="N9_11941" color="240,215,34" edges="82455845 4544061#1 119201838 31740644#0 31740644#1 425920672#0 417073459#1 4638315#0 4638315#3 417073457#0 5120959#2 5120959#5 5120959#6 111251389#1 375861849 375861848 37740223 4581770#1">
+        <stop busStop="agg_11941_0_11943_25_10818_32_10120_36_11941_1_12038_11" duration="20.0" until="20.0" parking="true"/>
+        <stop busStop="agg_11941_2_11085_13" duration="20.0" until="200.0" parking="true"/>
+        <stop busStop="agg_11941_3_11085_14" duration="20.0" until="230.0" parking="true"/>
+        <stop busStop="agg_10789_22_11941_4_11085_15" duration="20.0" until="260.0" parking="true"/>
+        <stop busStop="agg_10789_23_11941_5_11085_16" duration="20.0" until="320.0" parking="true"/>
+        <stop busStop="agg_10691_1_11941_6_10094_1" duration="20.0" until="560.0" parking="true"/>
+    </route>
+    <route id="N52_12037" color="240,215,34" edges="456213456 447792213 119201846#1 4544064#0 4610130#2 -147432169#1 -147432169#0 -35867463#2 -35867462#0 -142138183#6 -142138183#5 -142138183#4 -142138183#2 -142138183#1 -142138183#0 -472077807 -144132830 -4610131#0 23984498#2">
+        <stop busStop="agg_10115_0_9908_0_12037_0_9922_53_10818_33_10120_37_12038_12_9929_11_9931_0" duration="20.0" until="20.0" parking="true"/>
+        <stop busStop="agg_10115_1_12037_1_11943_24" duration="20.0" until="80.0" parking="true"/>
+        <stop busStop="agg_10115_2_12037_2" duration="20.0" until="140.0" parking="true"/>
+        <stop busStop="agg_10115_3_12037_3" duration="20.0" until="200.0" parking="true"/>
+        <stop busStop="agg_10115_4_12037_4_10814_3" duration="20.0" until="260.0" parking="true"/>
+        <stop busStop="agg_10115_5_12037_5" duration="20.0" until="320.0" parking="true"/>
+        <stop busStop="agg_10115_6_12037_6" duration="20.0" until="380.0" parking="true"/>
+        <stop busStop="agg_10115_7_12037_7" duration="20.0" until="440.0" parking="true"/>
+        <stop busStop="agg_10115_8_12037_8_10155_11" duration="20.0" until="500.0" parking="true"/>
+    </route>
+    <route id="N20_11957" color="240,215,34" edges="461317445#2 461317445#3 461317445#4 461317445#5 472077822#2 4594894#0 4594894#4 4594652#1 39492180#1 39492180#2 39492180#3 39492180#4 57936172 57936174#1 57936174#6 57936174#7 57936174#8 57936174#12 -34570668 -4581771#13 -4581771#8 -4581771#3 -4581771#2 39490176#1 39490176#2 39490176#3 39490176#5 39490176#9 34928182#0 4543585#1 4543585#2 4543585#7 4543585#8 4543589#1">
+        <stop busStop="agg_9828_19_11957_26" duration="20.0" until="60.0" parking="true"/>
+        <stop busStop="agg_9828_20_11060_9_11065_0_11957_27" duration="20.0" until="120.0" parking="true"/>
+        <stop busStop="agg_9828_21_11067_22_11957_28_11921_22" duration="20.0" until="180.0" parking="true"/>
+        <stop busStop="agg_9828_22_11957_29" duration="20.0" until="240.0" parking="true"/>
+        <stop busStop="agg_9828_23_11957_30" duration="20.0" until="300.0" parking="true"/>
+        <stop busStop="agg_9828_24_11957_31" duration="20.0" until="360.0" parking="true"/>
+        <stop busStop="agg_9828_25_11957_32" duration="20.0" until="390.0" parking="true"/>
+        <stop busStop="agg_9828_26_11957_33" duration="20.0" until="420.0" parking="true"/>
+        <stop busStop="agg_9828_27_11957_34" duration="20.0" until="480.0" parking="true"/>
+        <stop busStop="agg_9828_28_11880_15_11957_35" duration="20.0" until="540.0" parking="true"/>
+        <stop busStop="agg_9828_29_11880_16_11957_36" duration="20.0" until="660.0" parking="true"/>
+        <stop busStop="agg_9828_30_11880_17_11957_37" duration="20.0" until="720.0" parking="true"/>
+        <stop busStop="agg_10109_1_11880_18_11957_38" duration="20.0" until="1140.0" parking="true"/>
+    </route>
+    <route id="128_9931" color="240,215,34" edges="456213456 447792213 863796776#1 863796776#2 456213457 352683182#4 352683183#1 352683183#3 183583891#0 183583891#1 -82456678 -183583889#2 -312026137#0 -167070931#0 -291724749 -8008676#3 -8008676#2 -147432151#0 -147432152#1 -147432152#0 -4610047#9 -4610047#5 -4610047#4 -4610047#3 -4610047#2 31740296#2">
+        <stop busStop="agg_10115_0_9908_0_12037_0_9922_53_10818_33_10120_37_12038_12_9929_11_9931_0" duration="20.0" until="20.0" parking="true"/>
+        <stop busStop="agg_11923_24_9908_1_9931_1" duration="20.0" until="140.0" parking="true"/>
+        <stop busStop="agg_11923_25_10817_30_9931_2" duration="20.0" until="200.0" parking="true"/>
+        <stop busStop="9931_3" duration="20.0" until="260.0" parking="true"/>
+        <stop busStop="9931_4" duration="20.0" until="380.0" parking="true"/>
+        <stop busStop="9931_5" duration="20.0" until="440.0" parking="true"/>
+        <stop busStop="9931_6" duration="20.0" until="500.0" parking="true"/>
+        <stop busStop="9931_7" duration="20.0" until="560.0" parking="true"/>
+        <stop busStop="9931_8" duration="20.0" until="620.0" parking="true"/>
+        <stop busStop="agg_9908_14_9931_9" duration="20.0" until="740.0" parking="true"/>
+        <stop busStop="agg_9908_15_9931_10" duration="20.0" until="800.0" parking="true"/>
+    </route>
+    <route id="125_9922" color="240,215,34" edges="-4804202#0 -5117633#0 5117647#0 40817054#1 34570656#0 24295533#2 24295532#0 24295532#1 24295532#2 24295532#3 24295532#4 20834383#2 20834383#3 20834383#4 4637897 142138182#0 142138182#1 142138182#2 142138182#3 142138182#4 4637810#0 4637810#1 -28983637#12 -28983637#11 -28983637#9 -28983637#8 -28983637#6 -28983637#5 -28983637#2 -28983637#1 123908293#1 501402607#1 501402606 863796775 28710921#0 4544061#1 119201838 4544062#0 456213456">
+        <stop busStop="agg_9922_38_9929_1" duration="20.0" until="120.0" parking="true"/>
+        <stop busStop="agg_9922_39_9929_2" duration="20.0" until="180.0" parking="true"/>
+        <stop busStop="9922_40" duration="20.0" until="240.0" parking="true"/>
+        <stop busStop="agg_9922_41_9844_9" duration="20.0" until="300.0" parking="true"/>
+        <stop busStop="agg_9922_42_9844_10" duration="20.0" until="360.0" parking="true"/>
+        <stop busStop="agg_9922_43_9844_11" duration="20.0" until="420.0" parking="true"/>
+        <stop busStop="9922_44" duration="20.0" until="480.0" parking="true"/>
+        <stop busStop="9922_45" duration="20.0" until="540.0" parking="true"/>
+        <stop busStop="9922_46" duration="20.0" until="600.0" parking="true"/>
+        <stop busStop="9922_47" duration="20.0" until="660.0" parking="true"/>
+        <stop busStop="9922_48" duration="20.0" until="780.0" parking="true"/>
+        <stop busStop="9922_49" duration="20.0" until="840.0" parking="true"/>
+        <stop busStop="agg_9922_50_10817_29" duration="20.0" until="900.0" parking="true"/>
+        <stop busStop="9922_51" duration="20.0" until="960.0" parking="true"/>
+        <stop busStop="agg_9922_52_11921_28_9929_10" duration="20.0" until="1140.0" parking="true"/>
+        <stop busStop="agg_10115_0_9908_0_12037_0_9922_53_10818_33_10120_37_12038_12_9929_11_9931_0" duration="20.0" until="1260.0" parking="true"/>
+    </route>
+    <route id="125_9908" color="240,215,34" edges="456213456 447792213 863796776#1 863796776#2 456213457 352683182#4 28983637#1 28983637#2 28983637#5 28983637#6 28983637#8 28983637#9 28983637#11 28983637#12 -4637810#1 -4637810#0 -142138182#4 -142138182#3 -142138182#2 -142138182#1 -142138182#0 -4637897 -20834383#4 -20834383#3 -20834383#2 -24295532#4 -24295532#3 -24295532#2 -24295532#1 -24295532#0 4638312#0 5117653#1 34570658#0 40817055#1 5117633#0 31740296#2">
+        <stop busStop="agg_10115_0_9908_0_12037_0_9922_53_10818_33_10120_37_12038_12_9929_11_9931_0" duration="20.0" until="20.0" parking="true"/>
+        <stop busStop="agg_11923_24_9908_1_9931_1" duration="20.0" until="140.0" parking="true"/>
+        <stop busStop="9908_2" duration="20.0" until="200.0" parking="true"/>
+        <stop busStop="9908_3" duration="20.0" until="260.0" parking="true"/>
+        <stop busStop="9908_4" duration="20.0" until="320.0" parking="true"/>
+        <stop busStop="9908_5" duration="20.0" until="380.0" parking="true"/>
+        <stop busStop="9908_6" duration="20.0" until="500.0" parking="true"/>
+        <stop busStop="agg_9908_7_11085_4" duration="20.0" until="560.0" parking="true"/>
+        <stop busStop="9908_8" duration="20.0" until="620.0" parking="true"/>
+        <stop busStop="agg_9908_9_9852_34" duration="20.0" until="740.0" parking="true"/>
+        <stop busStop="agg_9908_10_9852_35" duration="20.0" until="800.0" parking="true"/>
+        <stop busStop="agg_9908_11_9852_36" duration="20.0" until="860.0" parking="true"/>
+        <stop busStop="agg_9908_12_9852_37" duration="20.0" until="920.0" parking="true"/>
+        <stop busStop="9908_13" duration="20.0" until="980.0" parking="true"/>
+        <stop busStop="agg_9908_14_9931_9" duration="20.0" until="1040.0" parking="true"/>
+        <stop busStop="agg_9908_15_9931_10" duration="20.0" until="1100.0" parking="true"/>
+    </route>
+    <route id="150_10120" color="240,215,34" edges="82469454 4610131#0 4610131#1 28819804 142138183#0 142138183#1 142138183#2 142138183#4 142138183#5 142138183#6 35867462#0 35867463#2 147432169#0 147432169#1 -4610130#2 426100318#1 82455845 4544061#1 119201838 4544062#0 456213456">
+        <stop busStop="agg_10153_7_10120_29_12038_4" duration="20.0" until="60.0" parking="true"/>
+        <stop busStop="agg_11082_15_10120_30_12038_5" duration="20.0" until="120.0" parking="true"/>
+        <stop busStop="agg_11082_16_10120_31_11085_0_12038_6" duration="20.0" until="180.0" parking="true"/>
+        <stop busStop="agg_10120_32_12038_7" duration="20.0" until="240.0" parking="true"/>
+        <stop busStop="agg_10817_27_10120_33_12038_8" duration="20.0" until="300.0" parking="true"/>
+        <stop busStop="agg_10818_30_10120_34_12038_9" duration="20.0" until="360.0" parking="true"/>
+        <stop busStop="agg_10818_31_10120_35_12038_10" duration="20.0" until="420.0" parking="true"/>
+        <stop busStop="agg_11941_0_11943_25_10818_32_10120_36_11941_1_12038_11" duration="20.0" until="480.0" parking="true"/>
+        <stop busStop="agg_10115_0_9908_0_12037_0_9922_53_10818_33_10120_37_12038_12_9929_11_9931_0" duration="20.0" until="600.0" parking="true"/>
+    </route>
+    <route id="128_9929" color="240,215,34" edges="-4804202#0 4610047#2 4610047#3 4610047#4 4610047#5 4610047#9 622326987 147432152#1 673699601#1 8008676#2 8008676#3 291724749 167070931#0 167070931#1 183583889#2 82456678 28507651 10857086#0 123908293#1 501402607#1 501402606 863796775 28710921#0 4544061#1 119201838 4544062#0 456213456">
+        <stop busStop="agg_9922_38_9929_1" duration="20.0" until="179.59251259899247" parking="true"/>
+        <stop busStop="agg_9922_39_9929_2" duration="20.0" until="239.59251259899247" parking="true"/>
+        <stop busStop="9929_3" duration="20.0" until="299.59251259899247" parking="true"/>
+        <stop busStop="9929_4" duration="20.0" until="359.59251259899247" parking="true"/>
+        <stop busStop="9929_5" duration="20.0" until="419.59251259899247" parking="true"/>
+        <stop busStop="9929_6" duration="20.0" until="479.59251259899247" parking="true"/>
+        <stop busStop="9929_7" duration="20.0" until="539.5925125989925" parking="true"/>
+        <stop busStop="9929_8" duration="20.0" until="719.5925125989925" parking="true"/>
+        <stop busStop="agg_11921_27_9929_9" duration="20.0" until="779.5925125989925" parking="true"/>
+        <stop busStop="agg_9922_52_11921_28_9929_10" duration="20.0" until="899.5925125989925" parking="true"/>
+        <stop busStop="agg_10115_0_9908_0_12037_0_9922_53_10818_33_10120_37_12038_12_9929_11_9931_0" duration="20.0" until="1019.5925125989925" parking="true"/>
+    </route>
+    <route id="142_10094" color="240,215,34" edges="375861848 37740223 4581770#1">
+        <stop busStop="agg_9828_32_10099_29_10103_28_10109_0_10789_24_11082_0_10785_0_10691_0_11085_17_10094_0_10683_32_9836_0" duration="20.0" until="20.0" parking="true"/>
+        <stop busStop="agg_10691_1_11941_6_10094_1" duration="20.0" until="80.0" parking="true"/>
+    </route>
+    <route id="155_10153" color="240,215,34" edges="82469454 -23984497#1 -102532387#1 -102532387#0 -200128494#6 -200128494#5 -200128494#4">
+        <stop busStop="agg_10153_7_10120_29_12038_4" duration="20.0" until="120.0" parking="true"/>
+        <stop busStop="10153_8" duration="20.0" until="180.0" parking="true"/>
+        <stop busStop="10153_9" duration="20.0" until="300.0" parking="true"/>
+    </route>
+    <route id="106_9661" color="240,215,34" edges="377739469#3 377739463#0 375097974#1 596976350#1 338527884#0 338527882#1 338527887#0 338527886#1">
+        <stop busStop="agg_11979_24_9661_0_11978_0_9669_37" duration="20.0" until="20.0" parking="true"/>
+        <stop busStop="agg_9661_1_11978_1" duration="20.0" until="140.0" parking="true"/>
+        <stop busStop="agg_9661_2_11978_2" duration="20.0" until="200.0" parking="true"/>
+        <stop busStop="agg_9661_3_11978_3" duration="20.0" until="320.0" parking="true"/>
+    </route>
+    <route id="106_9669" color="240,215,34" edges="120231000#1 375097980#0 375097982#1 375097973#0 375097975#1 375097966 375097972#0 375097977#1 375097963 375097970#0 28496796#1 377739461 28335565#1 377739469#3">
+        <stop busStop="agg_11979_20_9669_33" duration="20.0" until="60.0" parking="true"/>
+        <stop busStop="agg_11979_21_9669_34" duration="20.0" until="180.0" parking="true"/>
+        <stop busStop="agg_11979_22_9669_35" duration="20.0" until="240.0" parking="true"/>
+        <stop busStop="agg_11979_23_9669_36" duration="20.0" until="360.0" parking="true"/>
+        <stop busStop="agg_11979_24_9661_0_11978_0_9669_37" duration="20.0" until="480.0" parking="true"/>
+    </route>
+    <route id="150_10115" color="240,215,34" edges="456213456 447792213 119201846#1 4544064#0 4610130#2 -147432169#1 -147432169#0 -35867463#2 -35867462#0 -142138183#6 -142138183#5 -142138183#4 -142138183#2 -142138183#1 -142138183#0 -472077807 -144132830 -4610131#0 23984498#2">
+        <stop busStop="agg_10115_0_9908_0_12037_0_9922_53_10818_33_10120_37_12038_12_9929_11_9931_0" duration="20.0" until="20.0" parking="true"/>
+        <stop busStop="agg_10115_1_12037_1_11943_24" duration="20.0" until="80.0" parking="true"/>
+        <stop busStop="agg_10115_2_12037_2" duration="20.0" until="200.0" parking="true"/>
+        <stop busStop="agg_10115_3_12037_3" duration="20.0" until="260.0" parking="true"/>
+        <stop busStop="agg_10115_4_12037_4_10814_3" duration="20.0" until="320.0" parking="true"/>
+        <stop busStop="agg_10115_5_12037_5" duration="20.0" until="380.0" parking="true"/>
+        <stop busStop="agg_10115_6_12037_6" duration="20.0" until="440.0" parking="true"/>
+        <stop busStop="agg_10115_7_12037_7" duration="20.0" until="500.0" parking="true"/>
+        <stop busStop="agg_10115_8_12037_8_10155_11" duration="20.0" until="560.0" parking="true"/>
+    </route>
+    <route id="120_9836" color="240,215,34" edges="375861848 37740223 4543586#1 42732291#0 42732291#4 42732291#6 338527878#0 4071971#1 34928183#4 34928183#7 377994689#1 377994688 112886549#0 4581771#2 4581771#3 4581771#8 4581771#13 34570668 4581788#0 4581788#1 4581788#5 4581788#6 4581788#7 4581788#8 4638317#1 4638317#2 57936173#0 57936173#1 57936173#2 57936173#3 31910525#1 454719091#0 25788143#1 25788143#5 25788143#6 -605652305 -472077822#0 -461317445#4 -461317445#3 -461317445#2">
+        <stop busStop="agg_9828_32_10099_29_10103_28_10109_0_10789_24_11082_0_10785_0_10691_0_11085_17_10094_0_10683_32_9836_0" duration="20.0" until="20.0" parking="true"/>
+        <stop busStop="agg_10099_28_10103_27_11082_1_10785_1_11962_9_11882_28_10683_31_9836_1" duration="20.0" until="80.0" parking="true"/>
+        <stop busStop="agg_11962_10_11882_29_9836_2" duration="20.0" until="140.0" parking="true"/>
+        <stop busStop="agg_11962_11_11882_30_9836_3" duration="20.0" until="260.0" parking="true"/>
+        <stop busStop="agg_11962_12_11882_31_9836_4" duration="20.0" until="380.0" parking="true"/>
+        <stop busStop="agg_11962_13_9836_5" duration="20.0" until="500.0" parking="true"/>
+        <stop busStop="agg_11962_14_9836_6" duration="20.0" until="620.0" parking="true"/>
+        <stop busStop="agg_11962_15_9836_7" duration="20.0" until="680.0" parking="true"/>
+        <stop busStop="agg_11962_16_9836_8" duration="20.0" until="740.0" parking="true"/>
+        <stop busStop="agg_11962_17_9836_9" duration="20.0" until="800.0" parking="true"/>
+        <stop busStop="agg_11962_18_9836_10" duration="20.0" until="860.0" parking="true"/>
+        <stop busStop="agg_11923_30_11060_1_11962_19_9836_11" duration="20.0" until="980.0" parking="true"/>
+        <stop busStop="agg_11060_2_11962_20_9836_12" duration="20.0" until="1040.0" parking="true"/>
+        <stop busStop="agg_11060_3_11962_21_9836_13" duration="20.0" until="1160.0" parking="true"/>
+    </route>
+    <route id="142_10099" color="240,215,34" edges="373996558#1 373996562#0 4543586#1 42732296 42732298#0 111251389#1 375861849 375861848">
+        <stop busStop="agg_10099_28_10103_27_11082_1_10785_1_11962_9_11882_28_10683_31_9836_1" duration="20.0" until="120.0" parking="true"/>
+        <stop busStop="agg_9828_32_10099_29_10103_28_10109_0_10789_24_11082_0_10785_0_10691_0_11085_17_10094_0_10683_32_9836_0" duration="20.0" until="300.0" parking="true"/>
+    </route>
+    <route id="250_10814" color="240,215,34" edges="-413560020#0 -584015467#1 -584015467#0 -760126175#0 -82456682#2 -10755765#3 -10755765#2 -35867462#0 4637771#0 4637771#1 22983236 25596237 23984385">
+        <stop busStop="agg_10817_32_10814_0_10814_1" duration="20.0" until="20.0" parking="true"/>
+        <stop busStop="10814_2" duration="20.0" until="80.0" parking="true"/>
+        <stop busStop="agg_10115_4_12037_4_10814_3" duration="20.0" until="140.0" parking="true"/>
+        <stop busStop="10814_4" duration="20.0" until="260.0" parking="true"/>
+    </route>
+    <route id="147_10109" color="240,215,34" edges="375861848 37740223 4543589#1">
+        <stop busStop="agg_9828_32_10099_29_10103_28_10109_0_10789_24_11082_0_10785_0_10691_0_11085_17_10094_0_10683_32_9836_0" duration="20.0" until="20.0" parking="true"/>
+        <stop busStop="agg_10109_1_11880_18_11957_38" duration="20.0" until="140.0" parking="true"/>
+    </route>
+    <route id="X21_12462" color="240,215,34" edges="420492431#10 420492431#11 638684659 37304507#0 37304507#1 37304507#2 420492432#1 420492432#2 39965120#1 39965120#2">
+        <stop busStop="agg_11514_18_11921_17_12462_10" duration="20.0" until="420.0" parking="true"/>
+    </route>
+    <route id="X21_12464" color="240,215,34" edges="161241449#2 39965424#0 39965424#4 39965425#0 420492437#1 420492437#2 420492437#3 -62192859 62192860#0 62192860#1">
+        <stop busStop="agg_11516_15_11923_35_12464_5" duration="20.0" until="240.0" parking="true"/>
+    </route>
+    <route id="322_11065" color="240,215,34" edges="4594894#4 172432949#1 381235979 40816964#0 40816964#1 40816964#2 442910641#0 4706735#1">
+        <stop busStop="agg_9828_20_11060_9_11065_0_11957_27" duration="20.0" until="20.0" parking="true"/>
+        <stop busStop="agg_11923_31_11065_1_9852_40" duration="20.0" until="50.0" parking="true"/>
+        <stop busStop="agg_11923_32_11065_2" duration="20.0" until="80.0" parking="true"/>
+        <stop busStop="agg_11923_33_11065_3" duration="20.0" until="140.0" parking="true"/>
+        <stop busStop="11065_4" duration="20.0" until="200.0" parking="true"/>
+    </route>
+    <route id="327_11082" color="240,215,34" edges="375861848 37740223 4543586#1 42732296 42732298#0 42732301#1 42732301#2 42732301#5 375861850#0 417073458#1 417073456#1 4541085#0 4541085#1 417073455 350932989#0 4541086#1 27848138#0 27848138#1 27848138#3 434881848#0 183583890 82456679#0 4638316#1 4638316#2 4638316#3 4638316#4 727598634#0 727598634#1 727598634#2 4594655#1 454710689#0 -340338266#0 -4071976#0 42989095#0 42989095#1 42989095#2 42989095#3 42989095#4 42989095#5 42989093 472077810 4071972#1 493591080 183274487 23984624 23984497#1 4610131#0 4610131#1 28819804">
+        <stop busStop="agg_9828_32_10099_29_10103_28_10109_0_10789_24_11082_0_10785_0_10691_0_11085_17_10094_0_10683_32_9836_0" duration="20.0" until="20.0" parking="true"/>
+        <stop busStop="agg_10099_28_10103_27_11082_1_10785_1_11962_9_11882_28_10683_31_9836_1" duration="20.0" until="80.0" parking="true"/>
+        <stop busStop="agg_11082_2_10785_2_11943_21" duration="20.0" until="260.0" parking="true"/>
+        <stop busStop="11082_3" duration="20.0" until="380.0" parking="true"/>
+        <stop busStop="11082_4" duration="20.0" until="440.0" parking="true"/>
+        <stop busStop="11082_5" duration="20.0" until="500.0" parking="true"/>
+        <stop busStop="11082_6" duration="20.0" until="620.0" parking="true"/>
+        <stop busStop="agg_11923_26_10817_31_11082_7" duration="20.0" until="680.0" parking="true"/>
+        <stop busStop="agg_11923_27_11082_8" duration="20.0" until="800.0" parking="true"/>
+        <stop busStop="agg_11923_28_11082_9_9844_12" duration="20.0" until="920.0" parking="true"/>
+        <stop busStop="agg_11923_29_11082_10_9844_13" duration="20.0" until="980.0" parking="true"/>
+        <stop busStop="11082_11" duration="20.0" until="1040.0" parking="true"/>
+        <stop busStop="11082_12" duration="20.0" until="1100.0" parking="true"/>
+        <stop busStop="11082_13" duration="20.0" until="1220.0" parking="true"/>
+        <stop busStop="11082_14" duration="20.0" until="1280.0" parking="true"/>
+        <stop busStop="agg_11082_15_10120_30_12038_5" duration="20.0" until="1400.0" parking="true"/>
+        <stop busStop="agg_11082_16_10120_31_11085_0_12038_6" duration="20.0" until="1460.0" parking="true"/>
+    </route>
+    <route id="327_11085" color="240,215,34" edges="28819804 4764692#0 4764692#1 4764692#2 4764692#3 4764692#4 4637941 -4637897 27840438#0 27840438#1 -42989093 42989096#0 42989096#1 42989096#2 42989096#3 42989096#4 4071976#0 142138184#2 4594653#1 4594653#2 4638313#1 4638313#2 4638313#3 4638313#4 727598635#1 727598635#2 727598635#3 727598635#4 147432180#0 25630356#1 434881847#1 420497875#0 420497875#2 27848137 417073459#1 4638315#0 4638315#3 417073457#0 5120959#2 5120959#5 5120959#6 111251389#1 375861849 375861848">
+        <stop busStop="agg_11082_16_10120_31_11085_0_12038_6" duration="20.0" until="20.0" parking="true"/>
+        <stop busStop="11085_1" duration="20.0" until="140.0" parking="true"/>
+        <stop busStop="11085_2" duration="20.0" until="200.0" parking="true"/>
+        <stop busStop="11085_3" duration="20.0" until="260.0" parking="true"/>
+        <stop busStop="agg_9908_7_11085_4" duration="20.0" until="320.0" parking="true"/>
+        <stop busStop="11085_5" duration="20.0" until="440.0" parking="true"/>
+        <stop busStop="11085_6" duration="20.0" until="500.0" parking="true"/>
+        <stop busStop="agg_9852_32_11085_7" duration="20.0" until="620.0" parking="true"/>
+        <stop busStop="agg_9852_33_11085_8_11921_23" duration="20.0" until="680.0" parking="true"/>
+        <stop busStop="agg_11085_9_11921_24" duration="20.0" until="800.0" parking="true"/>
+        <stop busStop="agg_11085_10_11921_25" duration="20.0" until="860.0" parking="true"/>
+        <stop busStop="agg_11085_11_11921_26" duration="20.0" until="920.0" parking="true"/>
+        <stop busStop="11085_12" duration="20.0" until="1040.0" parking="true"/>
+        <stop busStop="agg_11941_2_11085_13" duration="20.0" until="1100.0" parking="true"/>
+        <stop busStop="agg_11941_3_11085_14" duration="20.0" until="1160.0" parking="true"/>
+        <stop busStop="agg_10789_22_11941_4_11085_15" duration="20.0" until="1280.0" parking="true"/>
+        <stop busStop="agg_10789_23_11941_5_11085_16" duration="20.0" until="1340.0" parking="true"/>
+        <stop busStop="agg_9828_32_10099_29_10103_28_10109_0_10789_24_11082_0_10785_0_10691_0_11085_17_10094_0_10683_32_9836_0" duration="20.0" until="1400.0" parking="true"/>
+    </route>
+    <route id="322_11067" color="240,215,34" edges="4706736#0 4675211#2 4675211#3 4675211#4 381235978 40816963#0 4594652#1 39492180#1 -5117273#2 5117274 -5117274 5117273#2 57936173#3">
+        <stop busStop="agg_11067_18_11921_18" duration="20.0" until="60.0" parking="true"/>
+        <stop busStop="agg_11067_19_11921_19" duration="20.0" until="120.0" parking="true"/>
+        <stop busStop="agg_11067_20_11921_20" duration="20.0" until="180.0" parking="true"/>
+        <stop busStop="agg_11067_21_11921_21_9844_6" duration="20.0" until="240.0" parking="true"/>
+        <stop busStop="agg_9828_21_11067_22_11957_28_11921_22" duration="20.0" until="300.0" parking="true"/>
+        <stop busStop="agg_11060_0_11067_23" duration="20.0" until="360.0" parking="true"/>
+    </route>
+    <flow id="122_9844" type="bus" route="122_9844" begin="1640.00" end="85640.00" period="300.0" line="122">
+        <param key="name" value="122: U Kurt-Schumacher-Platz (Berlin) =&gt; Titiseestr. (Berlin)"/>
+        <param key="short_name" value="122"/>
+        <param key="completeness" value="1.00"/>
+    </flow>
+    <flow id="155_10155" type="bus" route="155_10155" begin="2420.00" end="86420.00" period="600.0" line="155">
+        <param key="name" value="155: Berlin, Hielscherstr. =&gt; Masurenstr. (Berlin)"/>
+        <param key="short_name" value="155"/>
+        <param key="completeness" value="1.00"/>
+    </flow>
+    <flow id="120_9828" type="bus" route="120_9828" begin="2480.00" end="86480.00" period="720.0" line="120">
+        <param key="name" value="120: Wilhelmsruher Damm (Berlin) =&gt; U Leopoldplatz (Berlin)"/>
+        <param key="short_name" value="120"/>
+        <param key="completeness" value="1.00"/>
+    </flow>
+    <flow id="M21_11514" type="bus" route="M21_11514" begin="2900.00" end="86480.00" period="600.0" line="M21">
+        <param key="name" value="M21: Wilhelmsruher Damm (Berlin) =&gt; Goerdelersteg (Berlin)"/>
+        <param key="short_name" value="M21"/>
+        <param key="completeness" value="1.00"/>
+    </flow>
+    <flow id="M21_11516" type="bus" route="M21_11516" begin="2900.00" end="86300.00" period="600.0" line="M21">
+        <param key="name" value="M21: Goerdelersteg (Berlin) =&gt; Wilhelmsruher Damm (Berlin)"/>
+        <param key="short_name" value="M21"/>
+        <param key="completeness" value="1.00"/>
+    </flow>
+    <flow id="N20_11962" type="bus" route="N20_11962" begin="3260.00" end="14180.00" period="1800.0" line="N20">
+        <param key="name" value="N20: S+U Berlin Hauptbahnhof =&gt; Hainbuchenstr. (Berlin)"/>
+        <param key="short_name" value="N20"/>
+        <param key="completeness" value="0.98"/>
+    </flow>
+    <flow id="N26_11978" type="bus" route="N26_11978" begin="3300.00" end="14100.00" period="1800.0" line="N26">
+        <param key="name" value="N26: U Seestr. (Berlin) =&gt; Hertzallee (Berlin)"/>
+        <param key="short_name" value="N26"/>
+        <param key="completeness" value="1.00"/>
+    </flow>
+    <flow id="M27_11523" type="bus" route="M27_11523" begin="3380.00" end="86900.00" period="360.0" line="M27">
+        <param key="name" value="M27: S+U Jungfernheide Bhf (Berlin) =&gt; Hadlichstr. (Berlin)"/>
+        <param key="short_name" value="M27"/>
+        <param key="completeness" value="1.00"/>
+    </flow>
+    <flow id="255_10818" type="bus" route="255_10818" begin="3560.00" end="87560.00" period="600.0" line="255">
+        <param key="name" value="255: Schwarzelfenweg (Berlin) =&gt; U Osloer Str. (Berlin)"/>
+        <param key="short_name" value="255"/>
+        <param key="completeness" value="1.00"/>
+    </flow>
+    <flow id="147_10103" type="bus" route="147_10103" begin="3680.00" end="87680.00" period="1140.0" line="147">
+        <param key="name" value="147: S Ostbahnhof (Berlin) =&gt; U Leopoldplatz (Berlin)"/>
+        <param key="short_name" value="147"/>
+        <param key="completeness" value="1.00"/>
+    </flow>
+    <flow id="M27_11518" type="bus" route="M27_11518" begin="3740.00" end="86780.00" period="360.0" line="M27">
+        <param key="name" value="M27: Hadlichstr. (Berlin) =&gt; S+U Jungfernheide Bhf (Berlin)"/>
+        <param key="short_name" value="M27"/>
+        <param key="completeness" value="1.00"/>
+    </flow>
+    <flow id="N52_12038" type="bus" route="N52_12038" begin="3770.00" end="16370.00" period="1800.0" line="N52">
+        <param key="name" value="N52: Grabbeallee/Pastor-Niemöller-Platz (Berlin) =&gt; U Osloer Str. (Berlin)"/>
+        <param key="short_name" value="N52"/>
+        <param key="completeness" value="1.00"/>
+    </flow>
+    <flow id="N9_11941" type="bus" route="N9_11941" begin="3900.00" end="13800.00" period="900.0" line="N9">
+        <param key="name" value="N9: U Osloer Str. (Berlin) =&gt; S+U Rathaus Steglitz (Berlin)"/>
+        <param key="short_name" value="N9"/>
+        <param key="completeness" value="1.00"/>
+    </flow>
+    <flow id="122_9852" type="bus" route="122_9852" begin="3920.00" end="87920.00" period="300.0" line="122">
+        <param key="name" value="122: Titiseestr. (Berlin) =&gt; U Kurt-Schumacher-Platz (Berlin)"/>
+        <param key="short_name" value="122"/>
+        <param key="completeness" value="1.00"/>
+    </flow>
+    <flow id="250_10817" type="bus" route="250_10817" begin="3920.00" end="87920.00" period="600.0" line="250">
+        <param key="name" value="250: Grumbkowstr. (Berlin) =&gt; U Franz-Neumann-Platz (Berlin)"/>
+        <param key="short_name" value="250"/>
+        <param key="completeness" value="1.00"/>
+    </flow>
+    <flow id="N8_11921" type="bus" route="N8_11921" begin="3920.00" end="14300.00" period="600.0" line="N8">
+        <param key="name" value="N8: Wilhelmsruher Damm (Berlin) =&gt; S+U Hermannstr. (Berlin)"/>
+        <param key="short_name" value="N8"/>
+        <param key="completeness" value="1.00"/>
+    </flow>
+    <flow id="N6_11880" type="bus" route="N6_11880" begin="4280.00" end="13700.00" period="1800.0" line="N6">
+        <param key="name" value="N6: Berlin, An der Mühle =&gt; U Alt-Mariendorf (Berlin)"/>
+        <param key="short_name" value="N6"/>
+        <param key="completeness" value="1.00"/>
+    </flow>
+    <flow id="N52_12037" type="bus" route="N52_12037" begin="4620.00" end="15420.00" period="1800.0" line="N52">
+        <param key="name" value="N52: U Osloer Str. (Berlin) =&gt; Grabbeallee/Pastor-Niemöller-Platz (Berlin)"/>
+        <param key="short_name" value="N52"/>
+        <param key="completeness" value="1.00"/>
+    </flow>
+    <flow id="N26_11979" type="bus" route="N26_11979" begin="5120.00" end="15920.00" period="1800.0" line="N26">
+        <param key="name" value="N26: Hertzallee (Berlin) =&gt; U Seestr. (Berlin)"/>
+        <param key="short_name" value="N26"/>
+        <param key="completeness" value="1.00"/>
+    </flow>
+    <flow id="N9_11943" type="bus" route="N9_11943" begin="5300.00" end="16100.00" period="1680.0" line="N9">
+        <param key="name" value="N9: S+U Rathaus Steglitz (Berlin) =&gt; U Osloer Str. (Berlin)"/>
+        <param key="short_name" value="N9"/>
+        <param key="completeness" value="1.00"/>
+    </flow>
+    <flow id="N8_11923" type="bus" route="N8_11923" begin="5540.00" end="14780.00" period="540.0" line="N8">
+        <param key="name" value="N8: S+U Hermannstr. (Berlin) =&gt; Wilhelmsruher Damm (Berlin)"/>
+        <param key="short_name" value="N8"/>
+        <param key="completeness" value="1.00"/>
+    </flow>
+    <flow id="N6_11882" type="bus" route="N6_11882" begin="5960.00" end="16040.00" period="1800.0" line="N6">
+        <param key="name" value="N6: U Alt-Mariendorf (Berlin) =&gt; Berlin, An der Mühle"/>
+        <param key="short_name" value="N6"/>
+        <param key="completeness" value="1.00"/>
+    </flow>
+    <flow id="N20_11957" type="bus" route="N20_11957" begin="6200.00" end="17000.00" period="1800.0" line="N20">
+        <param key="name" value="N20: Hainbuchenstr. (Berlin) =&gt; S+U Berlin Hauptbahnhof"/>
+        <param key="short_name" value="N20"/>
+        <param key="completeness" value="0.98"/>
+    </flow>
+    <flow id="128_9931" type="bus" route="128_9931" begin="15360.00" end="85440.00" period="600.0" line="128">
+        <param key="name" value="128: U Osloer Str. (Berlin) =&gt; U Kurt-Schumacher-Platz (Berlin)"/>
+        <param key="short_name" value="128"/>
+        <param key="completeness" value="1.00"/>
+    </flow>
+    <flow id="125_9908" type="bus" route="125_9908" begin="15600.00" end="86220.00" period="660.0" line="125">
+        <param key="name" value="125: U Osloer Str. (Berlin) =&gt; S Frohnau (Berlin)"/>
+        <param key="short_name" value="125"/>
+        <param key="completeness" value="1.00"/>
+    </flow>
+    <flow id="142_10094" type="bus" route="142_10094" begin="16020.00" end="85200.00" period="1200.0" line="142">
+        <param key="name" value="142: U Leopoldplatz (Berlin) =&gt; S Ostbahnhof (Berlin)"/>
+        <param key="short_name" value="142"/>
+        <param key="completeness" value="1.00"/>
+    </flow>
+    <flow id="128_9929" type="bus" route="128_9929" begin="16040.41" end="86240.41" period="600.0" line="128">
+        <param key="name" value="128: U Kurt-Schumacher-Platz (Berlin) =&gt; U Osloer Str. (Berlin)"/>
+        <param key="short_name" value="128"/>
+        <param key="completeness" value="1.00"/>
+    </flow>
+    <flow id="106_9661" type="bus" route="106_9661" begin="16080.00" end="85980.00" period="1020.0" line="106">
+        <param key="name" value="106: U Seestr. (Berlin) =&gt; Lindenhof (Berlin)"/>
+        <param key="short_name" value="106"/>
+        <param key="completeness" value="1.00"/>
+    </flow>
+    <flow id="150_10115" type="bus" route="150_10115" begin="16140.00" end="85740.00" period="660.0" line="150">
+        <param key="name" value="150: U Osloer Str. (Berlin) =&gt; S Buch (Berlin) [Am Sandhaus]"/>
+        <param key="short_name" value="150"/>
+        <param key="completeness" value="1.00"/>
+    </flow>
+    <flow id="120_9836" type="bus" route="120_9836" begin="16440.00" end="85980.00" period="780.0" line="120">
+        <param key="name" value="120: U Leopoldplatz (Berlin) =&gt; Wilhelmsruher Damm (Berlin)"/>
+        <param key="short_name" value="120"/>
+        <param key="completeness" value="1.00"/>
+    </flow>
+    <flow id="155_10153" type="bus" route="155_10153" begin="16580.00" end="86900.00" period="600.0" line="155">
+        <param key="name" value="155: Masurenstr. (Berlin) =&gt; Berlin, Hielscherstr."/>
+        <param key="short_name" value="155"/>
+        <param key="completeness" value="1.00"/>
+    </flow>
+    <flow id="250_10814" type="bus" route="250_10814" begin="17340.00" end="85680.00" period="1020.0" line="250">
+        <param key="name" value="250: U Franz-Neumann-Platz (Berlin) =&gt; Grumbkowstr. (Berlin)"/>
+        <param key="short_name" value="250"/>
+        <param key="completeness" value="1.00"/>
+    </flow>
+    <flow id="147_10109" type="bus" route="147_10109" begin="17460.00" end="85920.00" period="600.0" line="147">
+        <param key="name" value="147: U Leopoldplatz (Berlin) =&gt; S Ostbahnhof (Berlin)"/>
+        <param key="short_name" value="147"/>
+        <param key="completeness" value="1.00"/>
+    </flow>
+    <flow id="150_10120" type="bus" route="150_10120" begin="18080.00" end="87920.00" period="600.0" line="150">
+        <param key="name" value="150: S Buch (Berlin) [Am Sandhaus] =&gt; U Osloer Str. (Berlin)"/>
+        <param key="short_name" value="150"/>
+        <param key="completeness" value="1.00"/>
+    </flow>
+    <flow id="125_9922" type="bus" route="125_9922" begin="18260.00" end="88820.00" period="1200.0" line="125">
+        <param key="name" value="125: S Frohnau (Berlin) =&gt; U Osloer Str. (Berlin)"/>
+        <param key="short_name" value="125"/>
+        <param key="completeness" value="1.00"/>
+    </flow>
+    <flow id="106_9669" type="bus" route="106_9669" begin="18980.00" end="88160.00" period="600.0" line="106">
+        <param key="name" value="106: Lindenhof (Berlin) =&gt; U Seestr. (Berlin)"/>
+        <param key="short_name" value="106"/>
+        <param key="completeness" value="1.00"/>
+    </flow>
+    <flow id="X21_12462" type="bus" route="X21_12462" begin="19280.00" end="82940.00" period="600.0" line="X21">
+        <param key="name" value="X21: Quickborner Str. (Berlin) =&gt; Goerdelersteg (Berlin)"/>
+        <param key="short_name" value="X21"/>
+        <param key="completeness" value="1.00"/>
+    </flow>
+    <flow id="142_10099" type="bus" route="142_10099" begin="19400.00" end="88760.00" period="1200.0" line="142">
+        <param key="name" value="142: S Ostbahnhof (Berlin) =&gt; U Leopoldplatz (Berlin)"/>
+        <param key="short_name" value="142"/>
+        <param key="completeness" value="1.00"/>
+    </flow>
+    <flow id="X21_12464" type="bus" route="X21_12464" begin="19640.00" end="83300.00" period="600.0" line="X21">
+        <param key="name" value="X21: Goerdelersteg (Berlin) =&gt; Quickborner Str. (Berlin)"/>
+        <param key="short_name" value="X21"/>
+        <param key="completeness" value="1.00"/>
+    </flow>
+    <flow id="322_11065" type="bus" route="322_11065" begin="21000.00" end="69780.00" period="1200.0" line="322">
+        <param key="name" value="322: U Paracelsus-Bad/Aroser Allee (Berlin) =&gt; Titiseestr. (Berlin)"/>
+        <param key="short_name" value="322"/>
+        <param key="completeness" value="1.00"/>
+    </flow>
+    <flow id="327_11082" type="bus" route="327_11082" begin="21360.00" end="71640.00" period="1200.0" line="327">
+        <param key="name" value="327: U Leopoldplatz (Berlin) =&gt; S Schönholz (Berlin)"/>
+        <param key="short_name" value="327"/>
+        <param key="completeness" value="1.00"/>
+    </flow>
+    <flow id="327_11085" type="bus" route="327_11085" begin="22500.00" end="72780.00" period="1200.0" line="327">
+        <param key="name" value="327: S Schönholz (Berlin) =&gt; U Leopoldplatz (Berlin)"/>
+        <param key="short_name" value="327"/>
+        <param key="completeness" value="1.00"/>
+    </flow>
+    <flow id="322_11067" type="bus" route="322_11067" begin="24080.00" end="70820.00" period="1200.0" line="322">
+        <param key="name" value="322: Titiseestr. (Berlin) =&gt; U Paracelsus-Bad/Aroser Allee (Berlin)"/>
+        <param key="short_name" value="322"/>
+        <param key="completeness" value="1.00"/>
+    </flow>
+</routes>
