@@ -7,27 +7,28 @@ graph LR
     
     %% Level 1: Project break down
     Root --> Vehicle[<b>Vehicle Concepts</b>]
-    Root --> AMoD[<b>AMoD Architecture</b><br/>fleet brain]
+    Root --> Fleet[<b>Fleet Management</b>]
     Root --> Road[<b>Road Concepts</b>]
 
+    %% Level 2: Vehicle Concepts Breakdown
+    Vehicle --> V_Pax[<b>Passenger Vehicles</b>]
+    Vehicle --> V_Car[<b>Cargo Vehicles</b>]
+    Vehicle --> V_Co[<b>Co-Modal Vehicles</b>]
 
-    %% Level 2: AMoD Breakdown
-    AMoD --> A_In[<b>Input</b>]
-    AMoD --> A_Op[<b>Operation</b>]
-    AMoD --> A_Con[<b>Context</b><br/>contraints and interfaces]
+    %% Level 2: Fleet Management Breakdown
+    Fleet --> F_Dem[<b>Demand</b>]
+    Fleet --> F_Pl[<b>Planing</b><br/>Algorithms (dispatching, routing, scheduling)]
+    Fleet --> F_Op[<b>Operation</b><br/>real-time execution, handling disruptions]
+    Fleet --> F_Con[<b>Context</b><br/>legal, infrastructure, interfaces]
 
-    %% Level 3: Input research questions
-    A_In --> A_In_Pax["<b>What are the requests on mobility service for passenger and how can they be identified or predicted?</b>"]
-    A_In --> A_In_Cargo["<b>What are the requests on cargo transport and how can they be managed and optimized?</b>"]
-
-    %% Level 3: Operation research questions
-    A_Op --> A_Op_Global["<b>What are the global optimums (i.e. minimal road use, minimal traffic jam ...) and which algorithms can be implemented?</b>"]
-    A_Op --> A_Op_Local["<b>What are the local optimus (i.e. wish of customer, game and cooperation with other vehicles)?</b>"]
+    %% Level 3: Demand breakdown
+    F_Dem --> F_Dem_Pax[<b>Passenger</b>]
+    F_Dem --> F_Dem_Cargo[<b>Cargo</b>]
     
-    %% Level 3: Context research questions
-    A_Con --> A_Con_Legal["<b>Which regulatory items should be considered and how can they be implemented?</b>"]
-    A_Con --> A_Con_Infr["<b>Which techniques of the city infrastructure can be used or developed to make the fleet brain run?</b>"]
-    A_Con --> A_Con_Inter["<b>What are the interfaces, through which the fleet brain exchange informations or physical entities?</b>"]
+    %% Level 3: Context Breakdown
+    F_Con --> F_Con_Legal[<b>Legal</b>]
+    F_Con --> F_Con_Infr[<b>Infrastructure</b>]
+    F_Con --> F_Con_Inter[<b>Interfaces</b><br/>data, material, humans]
 
 
     %% Styling for visual clarity
