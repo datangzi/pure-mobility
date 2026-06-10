@@ -1,0 +1,15 @@
+# AMod with AI
+
+## LLM in AMod
+
+### opl
+
+- assess the value of a literature review of implementation of LLM in AMoD
+- check if an solving tool for AMoD using LLM + CoT already exits. Yes -> potential of further research. No -> value / possibility of develop such one. 
+
+
+# AMoD + Cargo
+
+## opl
+
+- compare AMoD with modular vechicles and vehicles with integrated modularity

@@ -1,0 +1,106 @@
+# Enhancing CVRP Solver through LLM-driven Automatic Heuristic Design
+
+## meta data
+
+- Tagging: implemented for CVRP; construct prompt for LLM to generate heuristics; 
+
+## note
+
+### reference
+
+- [2] impractical for large-scale
+- [9] employ LLM for developing solver 
+- [19] large-scale CVRPLib instance
+- [20] calculate execution time of an instance
+
+### glossary
+
+- AILS-AHD: adaptive iterated local search - automatic heuristic design
+- EC: evolutionary computaion
+- CoT: Chain of Thought
+- HGS: hybrid genetic search
+
+## opl
+
+- read Appendix for prompt design, description of Operators for generating heuristic
+- understand how to read the convergence curve
+
+
+
+
+
+# Large Language Models in Operations Research: Methods, Applications, and Challeges
+
+## meta data
+
+- publish time: 14.10.2025
+- tagging: literature review, LLM in OR
+
+## note
+
+### core knowledge
+
+- 3 categories of implementing LLM in OR: automatic modeling, opitimization (heuristic design for VRP should belong to this category), direct solving
+- mentioned domina problems: supply chain, urban planning, food service, job scheduling, networking
+
+### reference
+
+### glossary
+
+- OR: Operations Research (complex system decision making, which includes VRP)
+
+## opl
+
+
+
+
+
+# Rethinking LLM-driven heuristic design: generating efficient and Specialized solvers via Dynamics-Aware optimization
+
+## meta data
+
+- Tagging: a Framework for enhancing Efficiency of LLM-driven heuristic design
+
+## note
+
+### reference
+
+- [Kor..2008] defines combinatorial optimization problem
+
+### glossary
+
+## opl
+
+
+
+
+
+# VRPAgent: LLM-driven discovery of heuristic Operators for vehicle Routing problems
+
+## meta data
+
+- Tagging: first LLM-based paradigm in VRP; Framework for designing heuristic Operators using LLM for LNS; implemented for CVRP, VRPTW, PCVRP
+
+## note
+
+### reference
+
+- [Kons..,2022] May be a literature review of heuristics for vrp
+
+### glossary
+
+- NCO: neural combinatorial optimization
+- LNS: large neighborhood search
+- PCVRP: Prize Collection vrp
+
+## opl
+
+- find out reason for the text "scalability remains a Major challenge as their reliance on Attention mechanisms makes it difficult to apply These models to Problems that involve processing full distance matrices"
+- find out if there exists a literature review for NCO to validate one opinion in this paper: NCO can be devided into construction and improvement Methode
+
+
+
+
+
+
+
